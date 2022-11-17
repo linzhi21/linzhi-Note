@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function func(a, b) {
+            a = 200;
+            b[0] = '高小乐';
+            b = [];
+        }
+
+        var num = 100;
+        var arr = [100,200,300];
+
+        func(num, arr);
+
+        console.log(num);      // 100
+        console.log(arr);      // ['高小乐', 200, 300]
+
+
+    </script>
+</body>
+</html>

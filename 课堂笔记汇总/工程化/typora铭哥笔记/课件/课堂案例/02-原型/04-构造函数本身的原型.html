@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 自定义构造函数
+        function User() {}
+        // 实例化
+        var user = new User();
+
+        // User实例的原型
+        console.log(User.prototype);
+        console.log(user.__proto__);
+        console.log('');
+
+
+        // User本身的原型
+        console.log(User.__proto__);
+        console.log(Function.prototype);
+    </script>
+</body>
+</html>

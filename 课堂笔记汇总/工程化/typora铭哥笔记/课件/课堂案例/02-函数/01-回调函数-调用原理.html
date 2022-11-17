@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 回调函数实现原理01------------------------------------------
+        // 定义函数， 需要回调函数作为参数
+        function func(cb) {
+            cb();
+        }
+        // 调用func()
+        func(function() {
+            console.log('hello，我是回调函数！');
+        });
+        console.log('');
+
+
+
+        // 回调函数实现原理02 ------------------------------------------
+        function func01(cb) {
+            cb(100, 200);
+        }
+        
+        func01(function(a,b) {
+            console.log(a, b);
+        });
+        func01(fn);
+        function fn(num) {
+            console.log(num);
+        }
+        console.log('');
+        // [].forEach(function(item,index) {
+
+        // })
+
+
+
+        // 回调函数实现原理03 ------------------------------------------
+        function func02(cb, num1, num2) {
+            cb(num1, num2);
+        }
+
+        func02(function(a,b){
+            console.log(a + b);
+        }, 80, 70);
+        console.log('');
+
+
+
+
+        // 回调函数实现原理04------------------------------------------
+        function func03(cb, num1, num2) {
+            return cb(num1, num2);
+        }
+        var res = func03(function(n1, n2) {
+            return n1 * n2;
+        }, 10, 40);
+        console.log(res);
+
+
+    </script>
+</body>
+</html>

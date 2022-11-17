@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: #f00;
+        }
+        #box {
+            margin-top: 100px;
+            text-align: center;
+            color:#fff;
+            font-size: 80px;
+            font-weight: 700;
+        }
+    </style>
+</head>
+<body>
+    <div id="box"></div>
+    <script>
+        (function() {
+            // 获取元素
+            var box = document.querySelector('#box');
+
+            // 创建目标日期时间对象
+            var dstDate = new Date(2022, 1, 1);
+
+            // 运行定时器函数
+            runTime();
+
+            // 开启定时器
+            var intervalId = setInterval(runTime, 1000);
+
+            // 定时器函数
+            function runTime() {
+                // 创建当前的日期时间对象
+                var currentDate = new Date();
+
+                // 计算目标日期与当前日期的时间差（相距的毫秒数）
+                var seconds = dstDate.getTime() - currentDate.getTime();
+                
+                // 如果seconds的值是负数 日期已经过了
+                if (seconds < 0) {
+                    // 停止定时器
+                    clearInterval(intervalId);
+                    box.innerHTML = '春节快乐！';
+                    return;
+                }
+
+                // 从seconds 提取整天、整小时、整分钟、整秒
+                // 提取整的天数
+                var d = Math.floor(seconds / (3600 * 24 * 1000));
+                // 提取整的小时数
+                var h = Math.floor(seconds % (3600 * 24 * 1000) / (3600 * 1000));
+                // 提取整的分钟数
+                var m = Math.floor(seconds % (3600 * 1000) / (60 * 1000));
+                // 提取完整的秒数
+                var s = Math.floor(seconds % (60 * 1000) / 1000);
+            
+                // 个位数补 0
+                d = d < 10 ? '0' + d : d;
+                h = h < 10 ? '0' + h : h;
+                m = m < 10 ? '0' + m : m;
+                s = s < 10 ? '0' + s : s;
+
+                // 拼字符串
+                box.innerHTML = '距离春节还有<br>' + d + '天' + h + '小时' + m + '分钟' + s + '秒';
+            }
+
+
+        })();
+
+    </script>
+</body>
+</html>

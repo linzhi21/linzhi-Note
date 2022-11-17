@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn01" onclick="fn(event)">按钮01</button>    
+    <button id="btn02">按钮02</button>    
+    <button id="btn03">按钮03</button>    
+</body>
+
+<script>
+    // 获取元素
+    btn01 = document.querySelector('#btn01');
+    btn02 = document.querySelector('#btn02');
+    btn03 = document.querySelector('#btn03');
+
+    function fn(even) {
+        console.log('btn01 被 click 了！', even);
+    };
+
+    btn02.onclick = function(eve) {
+        console.log('btn02 被 click 了', eve);
+    };
+
+    btn03.addEventListener('click', function(event) {
+        // var event = ev || window.event;
+        console.log('btn03 被 click 了', ev);
+        
+    });
+
+
+
+
+
+
+</script>
+</html>

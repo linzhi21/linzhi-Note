@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 数组排序
+        var arr = [45, 16, 89, 100, 56, 90, 12];
+        console.log('初始状态：', arr);
+
+
+        // 排序 sort
+        // arr.sort();
+        // console.log('排序之后：', arr);
+
+
+        // 排序 按照数字本身的大小  升序
+        arr.sort(function(next, prev) {
+            // if (next < prev) {
+            //     return -1;
+            // } 
+            return next - prev;
+        });
+        console.log('升序排列：', arr);
+
+
+        // 降序
+        arr.sort(function(next, prev) {
+            return prev - next;
+        });
+        console.log('降序排列：', arr);
+
+
+    </script>
+</body>
+</html>

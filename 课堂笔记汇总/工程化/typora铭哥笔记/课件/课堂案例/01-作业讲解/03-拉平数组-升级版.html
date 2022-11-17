@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 定义数组
+        var nums = [
+            [1000, 2000, 3000],
+            'hello',
+            [
+                [10,20,30],
+                [
+                    'a', 
+                    'b', 
+                    ['A', 'B', 'C']
+                ],
+                '小乐'
+            ],
+            12313,
+            [101,202,303]
+        ];
+
+        
+        // push pop shift unshift splice forEach sort concat()
+        // 数组1.concat(数组2)
+        // [1,2,3] ['a','b']
+
+        // 定义函数 实现数组拉平
+        function arrayFlat(arr) {
+            // 定义空数组
+            var newArr = [];
+            // 遍历 arr
+            for (var i = 0; i < arr.length; i ++) {
+                // 判断 arr[i] 是否还是个数组
+                if (arr[i] instanceof Array) {
+                    // 递归调用 将函数返回值与newArr 连接
+                    newArr = newArr.concat(arrayFlat(arr[i]));
+                } else {
+                    // 将 arr[i] 作为元素加入到 newArr 中
+                    newArr.push(arr[i]);
+                }
+            }
+            // 返回
+            return newArr;
+        }
+
+
+        console.log(arrayFlat(nums));
+        console.log(arrayFlat(nums));
+     
+
+        
+
+    </script>
+</body>
+</html>

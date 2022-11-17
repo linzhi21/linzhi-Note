@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul {
+            margin-top: 20px;
+            padding: 0;
+            list-style: none;
+            width: 600px;
+        }
+        li {
+            margin: 10px 0;
+            padding: 10px;
+            border: 2px solid #999;
+        }
+        li.active {
+            border-color: #f00;
+        }
+
+        input,button {
+            padding: 10px;
+            border: 1px solid #999;
+        }
+    </style>
+</head>
+<body>
+    <input type="text">
+    <button>添加</button>
+    <ul id="newsList">
+        <li>文升到非胸国，五见。</li>
+        <li>文升到非胸国，五见。</li>
+        <li>文升到非胸国，五见。</li>
+        <li>文升到非胸国，五见。</li>
+        <li>文升到非胸国，五见。</li>
+        <li>文升到非胸国，五见。</li>
+    </ul>
+
+    <script>
+        var ulBox = document.querySelector('#newsList');
+        
+        var liCollection = ulBox.getElementsByTagName('li');
+        var liList = ulBox.querySelectorAll('li');
+
+        console.log(liCollection);
+        console.log(liList);
+
+        // 动态添加一个li
+        var newLi = document.createElement('li');
+        newLi.innerHTML = '新的LI';
+        ulBox.appendChild(newLi);
+        console.log('');
+
+        console.log(liCollection);
+        console.log(liList);
+    </script>
+</body>
+</html>

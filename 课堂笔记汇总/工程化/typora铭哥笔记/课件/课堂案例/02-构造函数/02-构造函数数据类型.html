@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var arr1 = [];
+        var arr2 = [10,20,30];
+
+        console.log(arr1.constructor);
+        console.log(arr2.constructor);
+        console.log(arr2.constructor === arr1.constructor);
+        console.log([].constructor);
+        console.log('');
+
+        function fn01() {}
+        var fn02 = function() {}
+        var fn03 = new Function();
+
+        console.log(fn01.constructor);
+        console.log(fn02.constructor);
+        console.log(fn03.constructor);
+        console.log('');
+
+
+        var msg = 'hello';
+        console.log(msg.constructor);
+
+    </script>
+</body>
+</html>

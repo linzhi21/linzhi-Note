@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+        <!--
+            1. 依次输出什么?
+            2. 整个过程中产生了几个执行上下文?
+        -->
+        <script type="text/javascript">
+            console.log('global begin: '+ i); //globa begin undeifined
+            var i = 1;
+            foo(1);
+            function foo(i) {
+                if (i == 4) {
+                    return;
+                }
+                console.log('foo() begin:' + i);
+                foo(i + 1);
+                console.log('foo() end:' + i);
+            }
+            console.log('global end: ' + i); 
+
+            /*
+             1. 先创建全局执行上下文对象，进栈
+             2. 调用 foo(1)，创建执行上下文对象，进栈 
+             3. 调用 foo(2), 创建执行上下文对象，进栈 
+             4. 调用 foo(3), 创建执行上下文对象，进栈 
+             5. 调用 foo(4)，创建执行上下文对象，进栈 
+             6. foo(4) 调用结束，对应的执行上下文对象出栈
+             7. foo(3) 调用结束，对应的执行上下文对象出栈
+             8. foo(2) 调用结束，对应的执行上下文对象出栈
+             9. foo(1) 调用结束，对应的执行上下文对象出栈
+             10. 全局执行上下文出栈
+            */
+        </script>
+
+</body>
+</html>

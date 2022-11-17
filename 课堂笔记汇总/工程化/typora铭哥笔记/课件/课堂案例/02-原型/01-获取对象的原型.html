@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function User() {}
+
+        // 创建对象
+        var obj = {};
+        var arr = [];
+        var fn = function() {};
+        var num = 100;
+        var user = new User();
+
+        // 通过 __proto__  属性
+        console.log(obj);
+        console.log(obj.__proto__);
+        // 通过构造函数获取
+        console.log(Object.prototype);
+        console.log(obj.__proto__ === Object.prototype);
+        console.log('');
+
+        console.log(arr.__proto__);
+        console.log(Array.prototype);
+        console.log('');
+
+        console.log(fn.__proto__);
+        console.log(Function.prototype);
+        console.log('');
+
+        console.log(num.__proto__);
+        console.log(Number.prototype);
+        console.log('');
+
+        console.log(user.__proto__);
+        console.log(User.prototype);
+
+    </script>
+</body>
+</html>

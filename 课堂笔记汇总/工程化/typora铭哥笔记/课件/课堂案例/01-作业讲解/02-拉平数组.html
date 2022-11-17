@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 定义数组
+        var nums = [
+            [1000, 2000, 3000],
+            'hello',
+            [
+                [10,20,30],
+                [
+                    'a', 
+                    'b', 
+                    ['A', 'B', 'C']
+                ],
+                '小乐'
+            ],
+            12313,
+            [101,202,303]
+        ];
+
+        // 定义空数组
+        var newArr = [];
+
+        // 定义函数
+        function arrayFlat(arr) {
+            // 遍历 arr
+            for (var i = 0; i < arr.length; i ++) {
+                // 判断 arr[i] 是否还是个数组
+                if (arr[i] instanceof Array) {
+                    // 递归调用
+                    arrayFlat(arr[i]);
+                } else {
+                    // 将 arr[i] 添加到新数组
+                    newArr.push(arr[i]);
+                }
+            }
+        }
+
+        // 调用函数
+        arrayFlat(nums);
+        console.log(newArr);
+
+
+        
+
+    </script>
+</body>
+</html>

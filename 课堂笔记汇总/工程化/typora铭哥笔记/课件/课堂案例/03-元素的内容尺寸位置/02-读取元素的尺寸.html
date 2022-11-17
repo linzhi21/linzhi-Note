@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box {
+            width: 400px;
+            padding: 20px;
+            border: 3px dashed #099;
+        }
+        #box p {
+            width: 600px;
+            padding: 10px;
+            background: #ccc;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+        可应承德足台斗事来惊备的人乡次沾普天死，圣生历一通憾明月娟尤公，化冈承得承自太是非骂君策，卑娘到事但惶但低找足，事绛其那主，二尝是原感春妙明切子他，争锐本他不月慨己鲜国时流拆王护对，落光自与韩恨时君承必有杨有不后病，郭一气说不极战人属人我反牙可拆李仍你云。
+        <p>惜不盲舟中燕未你千够洪虑人活，游月开灰都畴属中句之罪杂人妙送瞠，之可把，使人承。</p>
+        杨选投，揽是预洪将得，性流者知姑畴制脱县愚爻承逝褒贼，衣可李不娟修者法太贤兴在于胆人无么，是自台不一一新归何，关老怒生着弟打归为春同来办被判饮，妙话故冇挟你人将心不苦手远承，们之盲作未，秦降的便其了以斯智谭冇药希，在动不在或说月便气兮，脱乏盲勉，仇尝君杨。
+    </div>
+
+    <script>
+        // 获取元素
+        var box = document.querySelector('#box');
+
+        // 读取元素的尺寸
+        console.log('offset：', box.offsetWidth, box.offsetHeight);
+        console.log('client：', box.clientWidth, box.clientHeight);
+        console.log('scroll：', box.scrollWidth, box.scrollHeight);
+    
+        var rect = box.getBoundingClientRect()
+        console.log(rect.width, rect.height);
+        console.log(box.getBoundingClientRect().width);
+        console.log(box.getBoundingClientRect().height);
+
+
+        
+    </script>
+</body>
+</html>

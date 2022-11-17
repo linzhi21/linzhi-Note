@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 自定义的构造函数
+        function Foo() {}
+
+        // Foo 的两个实例
+        var f1 = new Foo();
+        var f2 = new Foo();
+
+        // Object的两个实例
+        var o1 = {};
+        var o2 = {};
+
+
+    /*
+        f1、f2 的构造函数是 Foo
+        o1、o2 的构造函数是 Object
+        Object、Foo 的 构造函数是 Function
+
+
+        f1、f2 -> Foo.prototype -> Object.prototype
+        o1、o2 -> Object.prototype
+        Foo、Object、Function -> Function.prototype -> Object.protype
+    */
+
+
+    </script>
+</body>
+</html>

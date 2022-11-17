@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 创建 Object 对象
+        var obj = {
+            username: 'obj',
+            age: 10,
+            getInfo: function() {
+                console.log(this, this.age);
+            },
+            child: {
+                username: '高小乐',
+                age: 78,
+                say: function() {
+                    console.log(this, this.age);
+                }
+            }
+        }
+
+
+        // 作为函数去使用 方法
+        obj.getInfo();
+        obj.child.say();
+        console.log('');
+
+
+        // 作为构造函数去使用
+        new obj.getInfo();
+        new obj.child.say();
+
+
+
+
+    </script>
+</body>
+</html>

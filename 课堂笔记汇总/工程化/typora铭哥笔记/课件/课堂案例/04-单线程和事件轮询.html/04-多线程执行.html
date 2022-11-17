@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="number" id="numInpu01">
+    <br>
+    <input type="number" id="numInpu02">
+    <br>
+    <button id="btn">相加</button>
+    <br>
+    <br>
+    <div id="resBox">
+
+    </div>
+
+    <script>
+        // 获取元素
+        var numInput01 = document.querySelector('#numInpu01');
+        var numInput02 = document.querySelector('#numInpu02');
+        var btn = document.querySelector('#btn');
+        var resBox = document.querySelector('#resBox');
+
+
+        // Worker 是构造函数
+        // 创建子线程
+        var worker = new Worker('./worker.js');
+        // 监听子线程传回的数据
+        worker.onmessage = function(event) {
+            resBox.innerHTML = event.data;
+        }
+
+        // 点击按钮，获取输入框的数据，将输入框输入传入子线程
+        btn.onclick = function() {
+            var num01 = +numInput01.value;
+            var num02 = +numInput02.value;
+            // 向子线程发送数据
+            worker.postMessage({a:num01, b:num02});
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+<body>
+    <script>
+        // 提高优先级
+        console.log('abc'.match(/abc|def/));
+        console.log('abcef'.match(/ab(c|d)ef/));
+        console.log('');
+
+
+        // 把多个原子视为一个整体  主要影响数量修饰
+        console.log('hellooo'.match(/hello{3}/));
+        console.log('hellohellohello'.match(/(hello){3}/));
+        console.log('');
+
+
+        // 暂存内存
+        console.log('hello'.match(/hello/));
+        console.log('hello'.match(/(h)e(ll)o/));
+        console.log('hello'.match(/(h)e(?:ll)o/));
+        console.log('');
+
+
+
+        // 反向引用
+        var msg = '司掉得间"衣揽我金人"不人么中救土哥十郭败，"安不所派付付洪老极有胜让，竟惶让情活仇躲松百县动魂尝之别自派不君，"已惶妄求"极回首二郭备不赏可可便可留，得快办应愚，了找给便范九月变就洪使切，"易命时落君之航予知之身，可牛为也招，奔斗使通九色是国促人我都答的流的，战天。';
+        // 将msg中的双引号替换成中文的双引号  replace
+        console.log(msg);
+        console.log(msg.replace(/"/g, '“'));
+        console.log(msg.replace(/"([^"]+)"/g, '“$1”'));
+
+</script>
+</body>
+</html>

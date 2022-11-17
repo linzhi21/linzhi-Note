@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box {
+            width: 400px;
+            height: 300px;
+            border-radius: 10px;
+            background: #099;
+        }
+    </style>
+</head>
+<body>
+    <h1>mousedown mouseup mousemove</h1>
+    <hr>
+
+    <div id="box"></div>
+
+    <script>
+        // 获取元素
+        var box = document.querySelector('#box');
+
+        // 监听鼠标按键按下事件
+        box.onmousedown = function() {
+            this.style.background = '#990';
+        };
+
+        // 监听鼠标按键抬起事件
+        box.onmouseup = function() {
+            this.style.background = '#099';
+        };
+
+
+        // 鼠标移动事件
+        box.onmousemove = function() {
+            // console.log('ok');
+            var r = Math.floor(Math.random() * 256);
+            var g = Math.floor(Math.random() * 256);
+            var b = Math.floor(Math.random() * 256);
+            this.style.background = 'rgb('+r+','+g+','+b+')';
+        };
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        .tabs {
+            margin: 100px auto;
+            width: 800px;
+        }
+        .tab-title {
+            display: flex;
+            height: 40px;
+            line-height: 40px;
+            border-left: 1px solid #ccc;
+            border-bottom: 1px solid #ccc;
+        }
+        .tab-title li {
+            padding: 0 20px;
+            height: 39px;
+            border-right: 1px solid #ccc;
+            border-top: 1px solid #ccc;
+            background: #f5f5f5;
+        }
+        .tab-title li.active {
+            height: 40px;
+            background: #fff;
+        }
+        .tab-content li {
+            display: none;
+            padding: 20px;
+            min-height: 100px;
+            border: 1px solid #ccc;
+            border-top: none;
+        }
+        .tab-content li.active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="tabs">
+        <ul class="tab-title">
+            <li class="active">未付款订单</li>
+            <li>未发货订单</li>
+            <li>未收货订单</li>
+            <li>未评价订单</li>
+            <li>未退货订单</li>
+        </ul>
+        <ul class="tab-content">
+            <li class="active">这是未付款的订单...</li>
+            <li>这是未发货的订单...</li>
+            <li>这是未收货的订单...</li>
+            <li>这是未评价的订单...</li>
+            <li>这是未退货的订单...</li>
+        </ul>
+    </div>
+
+    <script>
+        (function() {
+            // 获取tab-title中所有的li
+            var tabTitleItems = document.querySelectorAll('.tab-title li');
+            // 获取 tab-conent 中所有的 li
+            var tabContentItems = document.querySelectorAll('.tab-content li');
+            
+            // 给选项卡标题 每个 li 监听 click 事件
+            tabTitleItems.forEach(function(tabTitleItem, index) {
+                tabTitleItem.onclick = function() {
+                    // 去去掉所有li的类名active
+                    for (var i = 0; i < tabTitleItems.length; i ++) {
+                        tabTitleItems[i].classList.remove('active');
+                        tabContentItems[i].classList.remove('active');
+                    }
+                    // 给当前点击的元素添加类名 active
+                    tabTitleItem.classList.add('active');
+                    tabContentItems[index].classList.add('active');
+                };
+            });   
+
+
+
+        })()
+    </script>
+</body>
+</html>

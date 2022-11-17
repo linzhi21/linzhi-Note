@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box {
+            text-align: center;
+            font-size: 400px;
+        }
+    </style>
+</head>
+<body>
+    <div id="box"></div>
+
+    <script>
+        // 获取元素
+        var boxEle = document.getElementById('box');
+        
+        // 定义变量
+        var num = 10;
+
+        // 调用 runTime
+        runTime();
+
+        // 开启定时器
+        var interval = setInterval(runTime, 1000);
+
+        // 定时器回调函数
+        function runTime() {
+            // 修改box元素中的内容
+            boxEle.innerHTML = num;
+
+            // 如果 num 变为了 0
+            if (num <= 0) {
+                clearInterval(interval);
+            }
+
+            // num 变化
+            num --;
+        }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TodoList</title>
+    <style>
+        .todolist {
+            margin: 50px auto;
+            width: 700px;
+        }
+
+        .todo-header input {
+            width: 200px;
+            padding: 10px;
+            border: 1px solid #ccc;
+        }
+        .todo-header button {
+            padding: 10px 20px;
+            background-color: #f5f5f5;
+            border: 1px solid #ccc;
+        }
+
+        .todo-body ul {
+            padding: 0;
+            list-style: none;
+        }
+
+        .todo-body li {
+            margin: 15px 0;
+            padding: 10px;
+            border: 1px solid #ccc;
+        }
+
+        .todo-body li.active {
+            border-color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="todolist">
+        <div class="todo-header">
+            <input type="text" id="input">
+            <button id="addBtn">添加</button>
+            <button id="insertBtn">插入</button>
+            <button id="deleteBtn">删除</button>
+            <button id="replaceBtn">替换</button>
+        </div>
+        <div class="todo-body">
+            <ul id="todoContent">
+                <li>和橘子去吃晚饭</li>
+                <li>和橘子去看电影</li>
+                <li>和橘子去做足疗</li>
+                <li>和橘子去河边钓鱼</li>
+                <li>和橘子去河边挖螃蟹</li>
+                <li>和橘子去办公室喝茶</li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        // 获取相关元素
+        var todoContent = document.querySelector('#todoContent');
+        var inputBox = document.querySelector('#input');
+        var addBtn = document.querySelector('#addBtn');
+        var deleteBtn = document.querySelector('#deleteBtn');
+        var insertBtn = document.querySelector('#insertBtn');
+        var replaceBtn = document.querySelector('#replaceBtn');
+
+        // 点击添加按钮
+        addBtn.onclick = function() {
+            // 创建 li 元素
+            var liNode = document.createElement('li');
+            // 设置 li 元素中的文本内容
+            liNode.innerHTML = inputBox.value;
+
+            // 将新创建到li元素作为子节点添加到 todoContent 中
+            todoContent.appendChild(liNode);
+        };
+
+        // 点击插入按钮
+        insertBtn.onclick = function() {
+            // 创建新的li元素
+            var liNode = document.createElement('li');
+            // 设置 li 元素的文本内容
+            liNode.innerHTML = inputBox.value;
+
+            // 将新创建的 li 元素作为子元素插入到 todoContent 最前面
+            //todoContent.insertBefore(liNode, todoContent.children[2]);
+            todoContent.insertBefore(liNode, todoContent.firstChild);
+        }
+    
+        // 点击删除被选中的li
+        deleteBtn.onclick = function() {
+            // 获取被选中的 li
+            var liNodes = document.querySelectorAll('#todoContent li.active');
+            // 遍历所有的被选中的 li，挨个删除
+            liNodes.forEach(function(item) {
+                todoContent.removeChild(item);
+            })
+        };
+
+        // 点击替换被选中的 li
+        replaceBtn.onclick = function() {
+            // 获取被选中的 li
+            var oldLiNodes = document.querySelectorAll('#todoContent li.active');
+
+            
+
+            // 遍历所有的被选中的 li，挨个替换
+            oldLiNodes.forEach(function(item) {
+                // 创建新的 li
+                var newLiNode = document.createElement('li');
+                newLiNode.innerHTML = inputBox.value;
+                // 替换
+                todoContent.replaceChild(newLiNode, item)
+            });
+          
+        }
+
+        // 给todoContent 中的每个子元素添加 click 事件
+        for (var i = 0; i < todoContent.children.length; i ++) {
+            todoContent.children[i].onclick = function() {
+                this.classList.toggle('active');
+            };
+        }
+    </script>
+
+ 
+</body>
+</html>

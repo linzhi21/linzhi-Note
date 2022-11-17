@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .start-page {
+            position: fixed;
+            left: 0;
+            top: 0;
+            padding-top: 200px;
+            box-sizing: border-box;
+            width: 100%;
+            height: 100%;
+            background: #099;
+            color: #fff;
+            text-align: center;
+            font-size: 100px;
+        }
+    </style>
+</head>
+<body>
+    <h1>相册</h1>
+    <hr>
+    <img src="https://t7.baidu.com/it/u=1010739515,2488150950&fm=193&f=GIF" alt="">
+    <img src="images/db01.jpg" alt="图片">
+    <img src="images/db02.jpg" alt="图片">
+    <img src="images/db03.jpg" alt="图片">
+    <img src="images/db04.jpg" alt="图片">
+    <img src="images/db05.jpg" alt="图片">
+    <img src="images/db06.jpg" alt="图片">
+    <img src="images/db07.jpg" alt="图片">
+    <img src="images/db08.jpg" alt="图片">
+    <img src="images/db09.jpg" alt="图片">
+    <img src="images/db10.jpg" alt="图片">
+
+    <div class="start-page" id="startPage"></div>
+
+
+    <script>
+        (function() {
+            // 获取元素
+            var startPage = document.querySelector('#startPage');
+            
+            // 定义数组 存储页面中的大图
+            var imageData = ['images/db01.jpg','images/db02.jpg','images/db03.jpg','images/db04.jpg','images/db05.jpg','images/db06.jpg','images/db07.jpg','images/db08.jpg','images/db09.jpg','images/db10.jpg', 'https://t7.baidu.com/it/u=1010739515,2488150950&fm=193&f=GIF'];
+
+            // 定义变量 记录加载完成的图片的数量
+            var loaded = 0;
+
+            // 遍历图片数据
+            imageData.forEach(function(item) {
+                // 创建图片元素
+                var imgNode = new Image();
+                imgNode.src = item;
+                // 监听 load 事件
+                imgNode.onload = function() {
+                    console.log('ok');
+                    loaded ++;
+                    // 设置进度
+                    var computed = loaded / imageData.length;
+                    startPage.innerHTML = (computed * 100).toFixed(2) + '%';
+                
+                    if (computed === 1) {
+                        startPage.style.display = 'none';
+                    }
+                }
+            });
+
+        })()
+    </script>
+    
+</body>
+</html>

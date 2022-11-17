@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /**
+         * 计算所有参数的平均值
+         @return number
+        */
+        function avg() {
+            // 计算所有参数的和
+            var sum = 0;
+            for (var i = 0; i < arguments.length; i ++) {
+                sum += arguments[i];
+            }
+            // 计算平均值并返回
+            return sum / arguments.length;
+        }
+
+
+        console.log(avg(1,2,3,4,5,6));
+        console.log(avg(1,2,3));
+
+    </script>
+</body>
+</html>

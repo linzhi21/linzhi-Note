@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        p {
+            width: 400px;
+            padding: 20px;
+            background: #ccc;
+        }
+        .wrapper {
+            padding: 20px;
+            width: 600px;
+            border: 2px dashed #999;
+        }
+    </style>
+</head>
+<body>
+    <h1>获取所有的元素</h1>
+    <hr class="item">
+    <div class="wrapper" id="wrapperBox">
+        <p>反揽高韩后作整章冒韩远方憾派事读说笔然。</p>
+        <p class="item current">反揽高韩后作整章冒韩远方憾派事读说笔然。</p>
+        <p>反揽高韩后作整章冒韩远方憾派事读说笔然。</p>
+        <div class="item">不陀德们只将俭法是己极大，自师十吞沾也。</div>
+        <p>反揽高韩后作整章冒韩远方憾派事读说笔然。</p>
+    </div>
+    <p class="item">洞情评生非搏后挟我没不，苟尤自投司洪使。</p>
+    <p class="p">洞情评生非搏后挟我没不，苟尤自投司洪使。</p>
+
+    <script>
+        console.log(document.all);
+
+        // 遍历
+        for (var i = 0; i < document.all.length; i ++) {
+            console.log(document.all[i]);
+        }
+
+        // 判断浏览器是否是 IE
+        if (document.all) {
+            document.write('这是IE浏览器！');
+        } else {
+            document.write('这是非IE浏览器！');
+        }
+    </script>
+</body>
+</html>

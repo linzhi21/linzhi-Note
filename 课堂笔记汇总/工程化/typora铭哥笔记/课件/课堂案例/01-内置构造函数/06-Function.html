@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 创建 function 的实例
+        function fn(a,b,c) {
+            console.log('我是fn', this);
+            console.log(a, b, c);
+            console.log('');
+        }
+
+
+        console.log(fn.name);
+        console.log(fn.length);
+        console.log(Array.name);
+        console.log(Array.length);
+        console.log('');
+
+
+
+
+        // call apply 调用并改变函数中的this
+        fn(100,200,300);
+
+        fn.call(['a','b'], 100, 200, 300);
+
+        fn.apply('hello', ['刘姥姥', 99, 66]);
+
+        // bind  改变函数中的this
+        var newFn = fn.bind({name:'高小乐'}, 1000);
+        newFn(10,20);
+        console.log('');
+        console.log('');
+
+
+
+
+        var obj = {
+            name: 'obj',
+            getInfo: function() {
+                console.log(this.name);
+            }
+        }
+
+        obj.getInfo();
+        obj.getInfo.call([100,200]);
+        obj.getInfo.apply({name:'高小乐'});
+        console.log('');
+        console.log('');
+
+
+
+        function sum() {
+            var res = 0;
+            [].forEach.call(arguments, function(item) {
+                res += item;
+            });
+            return res;
+
+            // return [].reduce.call(arguments, function(prev,curr) {
+            //     return prev + curr;
+            // }, 0);
+        }   
+
+        console.log(sum(10,20,30,40,50,60,70));
+    </script>
+</body>
+</html>

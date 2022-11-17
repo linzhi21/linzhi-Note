@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table {
+            width: 900px;
+            table-layout: fixed;
+            border-collapse: collapse;
+        }
+        td:not(:empty) {
+            padding: 10px;
+            border: 1px solid #999;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        document.write('<table>');
+        document.write('<tbody>');
+        
+        // 循环 9 行， 行号从1到9
+        for (var i = 1; i <= 9; i ++) {
+            document.write('<tr>');
+            
+            // 空白的单元格 9-i个
+            for (var j = 1; j <= 9-i; j ++) {
+                document.write('<td></td>');
+            }
+
+            // 有内容的单元格 i 个
+            for (var j = 1; j <= i; j ++) {
+                document.write('<td>'+j+'x'+i+'='+(j*i)+'</td>');
+            }
+
+
+            document.write('</tr>');
+        }
+            
+
+        document.write('</tbody>');
+        document.write('</table>');
+    </script>
+</body>
+</html>

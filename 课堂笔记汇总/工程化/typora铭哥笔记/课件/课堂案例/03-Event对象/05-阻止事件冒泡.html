@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box {
+            padding: 100px;
+            width: 400px;
+            height: 200px;
+            background: #f00;
+        }
+        #content {
+            padding: 20px;
+            width: 300px;
+            height: 100px;
+            color: #fff;
+            background: #099;
+        }
+    </style>
+</head>
+<body>
+   
+    <div id="box">
+        <div id="content"></div>
+    </div>
+
+    
+
+    <script>
+        // 获取元素
+        var box = document.querySelector('#box');
+        var contentBox = document.querySelector('#content');
+
+        // 给box元素监听 click 事件
+        box.onclick = function(event) {
+           console.log('box 被 click 了');
+           // 阻止事件冒泡
+           event.stopPropagation();
+        };
+
+        // 给 body 监听 click 事件
+        document.body.onclick = function() {
+            console.log('body 被 click 了');
+        };
+
+        document.onclick = function() {
+            console.log('document 被 click 了');
+        };
+
+    </script>
+</body>
+</html>

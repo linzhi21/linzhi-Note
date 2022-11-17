@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box {
+            width: 400px;
+            height: 300px;
+            border-radius: 10px;
+            background: #099;
+        }
+    </style>
+</head>
+<body>
+    <h1>单击 双击 右击</h1>
+    <hr>
+
+    <div id="box"></div>
+
+    <script>
+        // 获取元素
+        var box = document.querySelector('#box');
+
+        // 给box监听单击事件
+        box.onclick = function() {
+            console.log('box 被单击了！');
+        };
+
+        // 给box监听双击事件
+        box.ondblclick = function() {
+            console.log('box 被双击了！');
+        };
+
+        // 给box监听右击事件 contextmenu
+        box.oncontextmenu = function() {
+            console.log('box 被右击了！');
+        };
+    </script>
+</body>
+</html>

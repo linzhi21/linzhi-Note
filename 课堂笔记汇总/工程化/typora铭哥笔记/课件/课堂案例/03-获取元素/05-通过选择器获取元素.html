@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        p {
+            width: 400px;
+            padding: 20px;
+            background: #ccc;
+        }
+        .wrapper {
+            padding: 20px;
+            width: 600px;
+            border: 2px dashed #999;
+        }
+    </style>
+</head>
+<body>
+    <h1>通过选择器获取元素</h1>
+    <hr class="item">
+    <div class="wrapper" id="wrapperBox">
+        <p>反揽高韩后作整章冒韩远方憾派事读说笔然。</p>
+        <p class="item current">反揽高韩后作整章冒韩远方憾派事读说笔然。</p>
+        <p>反揽高韩后作整章冒韩远方憾派事读说笔然。</p>
+        <div class="item">不陀德们只将俭法是己极大，自师十吞沾也。</div>
+        <p>反揽高韩后作整章冒韩远方憾派事读说笔然。</p>
+    </div>
+    <p class="item">洞情评生非搏后挟我没不，苟尤自投司洪使。</p>
+    <p class="p">洞情评生非搏后挟我没不，苟尤自投司洪使。</p>
+
+    <script>
+        // 从文档中获取元素
+        var itemBox = document.querySelector('.item');
+        console.log(itemBox);
+
+        var pBox = document.querySelector('p');
+        console.log(pBox);
+
+        var box = document.querySelector('#box');
+        console.log(box);
+        console.log('');
+        console.log('');
+
+
+        // 获取集合
+        var itemList = document.querySelectorAll('.item');
+        console.log(itemList);
+
+        var wrapperBoxs = document.querySelectorAll('#wrapperBox');
+        console.log(wrapperBoxs);
+        console.log('');
+        console.log('');
+
+
+        // 获取元素
+        console.log(wrapperBoxs[0]);
+        var pNode = wrapperBoxs[0].querySelector('p');
+        console.log(pNode);
+
+        var pNodes= wrapperBoxs[0].querySelectorAll('p');
+        console.log(pNodes);
+        console.log('');
+        console.log('');
+
+
+        var pNodeList = document.querySelectorAll('.wrapper p');
+        console.log(pNodeList);
+    </script>
+</body>
+</html>

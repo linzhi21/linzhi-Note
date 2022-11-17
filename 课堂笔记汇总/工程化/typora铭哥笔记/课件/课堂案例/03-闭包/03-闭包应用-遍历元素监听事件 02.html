@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 600px;
+        }
+        .box p {
+            padding: 20px;
+            border: 1px solid #999;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <p>怎死皮婵感是，玉场。</p>
+        <p>怎死皮婵感是，玉场。</p>
+        <p>怎死皮婵感是，玉场。</p>
+        <p>怎死皮婵感是，玉场。</p>
+        <p>怎死皮婵感是，玉场。</p>
+        <p>怎死皮婵感是，玉场。</p>
+    </div>
+
+    <script>
+        // 获取所有的p元素
+        var pItems = document.querySelectorAll('.box p');
+
+        // 使用 for 循环遍历
+        for (var i = 0; i < pItems.length; i ++) {
+            (function(index) {
+                pItems[index].onclick = function() {
+                    console.log(index);
+                };
+            })(i);
+        }
+
+
+   
+
+    </script>
+</body>
+</html>

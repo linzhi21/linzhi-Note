@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input,button {
+            width: 300px;
+            padding: 10px;
+            border: 1px solid #999;
+            outline: none;
+        }
+    </style>
+</head>
+<body>
+    <form action="1.php">
+        <input type="text" placeholder="请输入姓名" id="nameInp"><br><br>
+        <button>提交</button><br><br>
+      
+    </form>
+
+    <script>
+        // 获取 input 元素
+        var inputBox = document.querySelector('#nameInp');
+
+        // 监听获取焦点事件
+        inputBox.onfocus = function() {
+            console.log('输入框获取了焦点');
+        };
+
+        // 监听失去焦点的事件
+        inputBox.onblur = function() {
+            console.log('输入框失去了焦点');
+        };
+
+        // 监听文本被选中的事件
+        inputBox.onselect = function() {
+            console.log('文本被选中！');
+        };
+
+
+        // 监听change事件
+        inputBox.onchange = function() {
+            console.log('change');
+        };
+
+        // 监听 input 事件
+        inputBox.oninput = function() {
+            console.log('input 触发');
+        };
+      
+
+    </script>
+</body>
+</html>

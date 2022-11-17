@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 创建 number 类型的数据
+        var num1 = 100;
+        var num2 = Number(100);
+        var num3 = new Number(100);
+
+        console.log(num1);
+        console.log(num2);
+        console.log(num3);
+        console.log('');
+
+        // 作为值使用（要求是原始状态）
+        console.log(num1 + num2 + num3);
+        console.log(num1 === num2);
+        console.log(num1 === num3);
+        console.log('');
+
+
+
+        // 作为对象使用
+        console.log(num1.constructor);  // Number
+        console.log(num1.constructor === num3.constructor);  // true
+        console.log('');
+
+        console.log(100.19.constructor);
+        console.log(100.0.constructor);
+        console.log(100..constructor);
+        console.log((100).constructor);
+        console.log(100['constructor']);
+        console.log('');
+
+        console.log('hllo'.constructor);
+        console.log(false.constructor);
+        console.log('');
+
+
+        var arr = [];
+        arr.name = '高小乐';
+        console.log(arr.name);
+        console.log('');
+
+
+        var num = 10;
+        num.name = '低大悲';
+        console.log(num.name);  // undefined
+        /*
+         
+         如何从原始状态转为对象状态
+         ① 临时 new Number() 得到对象
+         ② 属性加到临时对象上
+         ③ 用完了临时对象销毁
+
+
+         第53行： new Number(num) 创建临时对象,将属性加到临时对象；临时对象销毁
+         第54行： 再次 new Number(num) 创建临时对象，使用临时对象的 name 属性
+        
+        */
+    
+
+
+    </script>
+</body>
+</html>

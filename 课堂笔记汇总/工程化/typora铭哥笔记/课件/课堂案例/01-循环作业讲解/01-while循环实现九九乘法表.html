@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table {
+            width: 900px;
+            border-collapse: collapse;
+        }
+        td:not(:empty) {
+            padding: 10px;
+            border: 1px solid #999;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        document.write('<h2>第一种形式 九九乘法表</h2>');
+        document.write('<table>');
+        document.write('<tbody>');
+        var rows = 1;
+        while (rows <= 9) {
+            document.write('<tr>');
+                var cols = 1;
+                while (cols <= rows) {
+                    document.write('<td>'+cols+'x'+rows+'='+(cols*rows)+'</td>');
+                    cols ++;
+                }
+            document.write('</tr>');
+            rows ++;
+        }
+        document.write('</tbody>');
+        document.write('</table>');
+
+
+
+
+
+        document.write('<h2>第二种形式 九九乘法表</h2>');
+        document.write('<table>');
+        document.write('<tbody>');
+        var rows = 9;
+        while (rows >= 1) {
+            document.write('<tr>');
+                var cols = 1;
+                while (cols <= rows) {
+                    document.write('<td>'+cols+'x'+rows+'='+(cols*rows)+'</td>');
+                    cols ++;
+                }
+            document.write('</tr>');
+            rows --;
+        }
+        document.write('</tbody>');
+        document.write('</table>');
+
+
+        document.write('<h2>第三种形式 九九乘法表</h2>');
+        document.write('<table>');
+        document.write('<tbody>');
+        var rows = 1;
+        while (rows <= 9) {
+            document.write('<tr>');
+                // 无内容的单元格
+                var k = 1;
+                while (k <= 9-rows) {
+                    document.write('<td></td>');
+                    k ++;
+                }
+
+                // 有内容的单元格
+                var cols = 1;
+                while (cols <= rows) {
+                    document.write('<td>'+cols+'x'+rows+'='+(cols*rows)+'</td>');
+                    cols ++;
+                }
+            document.write('</tr>');
+            rows ++;
+        }
+        document.write('</tbody>');
+        document.write('</table>');
+        
+        
+        document.write('<h2>第四种形式 九九乘法表</h2>');
+        document.write('<table>');
+        document.write('<tbody>');
+        var rows = 9;
+        while (rows >= 1) {
+            document.write('<tr>');
+                // 无内容的单元格
+                var k = 1;
+                while (k <= 9-rows) {
+                    document.write('<td></td>');
+                    k ++;
+                }
+
+                // 有内容的单元格
+                var cols = 1;
+                while (cols <= rows) {
+                    document.write('<td>'+cols+'x'+rows+'='+(cols*rows)+'</td>');
+                    cols ++;
+                }
+            document.write('</tr>');
+            rows --;
+        }
+        document.write('</tbody>');
+        document.write('</table>');
+    </script>
+</body>
+</html>

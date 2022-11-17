@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 循环输出 10 次 高小乐，你妈让你穿秋裤了！ ---------------
+        var i = 0;
+        do {
+            console.log('高小乐，你妈让你穿秋裤了！', i);
+            i ++;
+        } while (i < 10);
+        console.log('循环结束后循环标记变量的值：', i);
+        console.log('');
+
+
+
+        // 循环输出 3 ~ 8  -------------------------------------
+        var i = 3;
+        do {
+            console.log(i);
+            i ++;
+        } while (i <= 8);
+        console.log('循环结束后循环标记变量的值：', i);
+        console.log('');
+        
+        // 循环输出 25 ~ 19 -------------------------------------------
+        var i = 25;
+        do {
+            console.log(i);
+            i --;
+        } while (i >= 19);
+        console.log('循环结束后循环标记变量的值：', i);
+        console.log('');
+
+        // 循环输出 0~10 之间所有的偶数 (嵌套单向分支)------------------------------------
+        var i = 0;
+        do {
+            if (i % 2 === 0) {
+                console.log(i);
+            }
+            i ++;
+        } while (i <= 10);
+        console.log('循环结束后循环标记变量的值：', i);
+        console.log('');
+       
+       
+        // 循环输出 0~10 之间所有的奇数 (自增2)------------------------------------
+        var i = 1;
+        do {
+            console.log(i);
+            i += 2;        
+        } while (i < 10);
+        console.log('循环结束后循环标记变量的值：', i);
+        console.log('');
+
+        // 计算 1 到 100 所有数字的和  -------------------------------------
+        var sum = 0;
+        var i = 1;
+        do {
+            sum += i;
+            i ++;
+        } while (i <= 100);
+        console.log('1到100所有数字的和：', sum);
+        console.log('');
+        
+        
+        // 计算 1 ~ 10 之间所有偶数的积  ------------------------------------
+        var res = 1;
+        var i = 2;
+        do {
+            res *= i;
+            i += 2;
+        } while (i <= 10);
+        console.log('1到10之间所有偶数的乘积：', res);
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var username = '低大悲';
+        var age = 100;
+
+        // 创建 Object 对象
+        var obj = {
+            username: 'obj',
+            age: 10,
+            getInfo: function() {
+                console.log(this, this.age);
+            },
+            child: {
+                username: '高小乐',
+                age: 78,
+                say: function() {
+                    console.log(this, this.age);
+                }
+            }
+        }
+
+
+        var fn = obj.getInfo;
+        fn();
+
+        var fn1 = obj.child.say;
+        fn1();
+
+        var arr = [];
+        arr.say = obj.child.say;
+        arr.say();
+
+       
+
+
+
+    </script>
+</body>
+</html>

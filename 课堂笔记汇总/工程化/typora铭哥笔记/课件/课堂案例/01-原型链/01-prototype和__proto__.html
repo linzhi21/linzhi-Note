@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // __proto__
+        // prototype
+        function func() {}
+
+        // func 的构造函数是 Function
+        // func.__proto__ 的构造函数是 Object
+        console.log('func函数本身的原型：', func.__proto__);
+
+        // func.prototype 的构造函数是 Object
+        console.log('func的实例的原型:', func.prototype);
+        console.log(func.__proto__ === func.prototype);
+        console.log('');
+
+
+
+        // Function 的构函数是 Function
+        console.log('Function 函数本身的原型：', Function.__proto__);
+        console.log('Function 实例本身的原型：', Function.prototype);
+        console.log(Function.prototype === Function.__proto__);
+        console.log(Function.prototype === func.__proto__);
+    </script>
+</body>
+</html>

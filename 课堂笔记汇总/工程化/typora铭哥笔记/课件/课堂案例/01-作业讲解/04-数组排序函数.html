@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 定义数组
+        var arr = [45, 16, 89, 100, 56, 90, 12];
+        console.log('原数组：', arr);
+
+
+        /**
+         * 实现数组排序
+         * @param array 需要排序的数组
+         * @param boolean true:降序 flase:升序（默认值）
+         * @return array 排好序的数组
+        */
+       function arraySort(arr, isDown) {
+            // 循环 1 到 length-1 控制轮数
+            for (var i = 1; i < arr.length; i ++) {
+                // 进行每一轮循环的比较
+                for (var n = 0; n < arr.length - i; n ++) {
+                    if (isDown) {
+                        // 降序
+                        if (arr[n+1] > arr[n]) {
+                            var temp = arr[n];
+                            arr[n] = arr[n+1];
+                            arr[n+1] = temp;
+                        }
+                    } else {
+                        // 升序
+                        if (arr[n+1] < arr[n]) {
+                            var temp = arr[n];
+                            arr[n] = arr[n+1];
+                            arr[n+1] = temp;
+                        }
+                    }
+                }
+            }
+            // 返回排好序的数组
+            return arr;
+        }
+
+       console.log(arraySort([45, 16, 89, 100, 56, 90, 12]));
+       console.log(arraySort([45, 16, 89, 100, 56, 90, 12], true));
+
+
+
+
+        // 循环 1 到 length-1 控制轮数
+        // for (var i = 1; i < arr.length; i ++) {
+        //     // 进行每一轮循环的比较
+        //     for (var n = 0; n < arr.length - i; n ++) {
+        //         // 如果后面的元素比前面的元素小，交换两个元素的值
+        //         if (arr[n+1] < arr[n]) {
+        //             var temp = arr[n];
+        //             arr[n] = arr[n+1];
+        //             arr[n+1] = temp;
+        //         }
+        //     }
+        // }
+        // console.log('最终结果：', arr);
+
+
+        // 第一轮，找出最大的元素 放在数组的最后
+        // for (var n = 0; n < arr.length - 1; n ++) {
+        //     // 如果后面的元素比前面的元素小，交换两个元素的值
+        //     if (arr[n+1] < arr[n]) {
+        //         var temp = arr[n];
+        //         arr[n] = arr[n+1];
+        //         arr[n+1] = temp;
+        //     }
+        // }
+        // console.log('第一轮比较之后：', arr);
+
+
+        // // 第二轮 找出第二大的元素 放在倒数第二个 最后一个元素不参与比较
+        // for (var n = 0; n < arr.length - 2; n ++) {
+        //     // 如果后面的元素比前面的元素小，交换两个元素的值
+        //     if (arr[n+1] < arr[n]) {
+        //         var temp = arr[n];
+        //         arr[n] = arr[n+1];
+        //         arr[n+1] = temp;
+        //     }
+        // }
+        // console.log('第二轮比较之后：', arr);
+
+        // // 第三轮 找出第三大的元素 放在倒数第三个 最后两个元素不参与比较
+        // for (var n = 0; n < arr.length - 3; n ++) {
+        //     // 如果后面的元素比前面的元素小，交换两个元素的值
+        //     if (arr[n+1] < arr[n]) {
+        //         var temp = arr[n];
+        //         arr[n] = arr[n+1];
+        //         arr[n+1] = temp;
+        //     }
+        // }
+        // console.log('第三轮比较之后：', arr);
+
+        // // 第四轮 找出第四大的元素 放在倒数第四个 最后三个元素不参与比较
+        // for (var n = 0; n < arr.length - 4; n ++) {
+        //     // 如果后面的元素比前面的元素小，交换两个元素的值
+        //     if (arr[n+1] < arr[n]) {
+        //         var temp = arr[n];
+        //         arr[n] = arr[n+1];
+        //         arr[n+1] = temp;
+        //     }
+        // }
+        // console.log('第四轮比较之后：', arr);
+
+        //  // 第五轮 找出第五大的元素 放在倒数第五个 最后四个元素不参与比较
+        //  for (var n = 0; n < arr.length - 5; n ++) {
+        //     // 如果后面的元素比前面的元素小，交换两个元素的值
+        //     if (arr[n+1] < arr[n]) {
+        //         var temp = arr[n];
+        //         arr[n] = arr[n+1];
+        //         arr[n+1] = temp;
+        //     }
+        // }
+        // console.log('第五轮比较之后：', arr);
+
+
+        //  // 第六轮 找出第六大的元素 放在倒数第六个 最后五个元素不参与比较
+        //  for (var n = 0; n < arr.length - 6; n ++) {
+        //     // 如果后面的元素比前面的元素小，交换两个元素的值
+        //     if (arr[n+1] < arr[n]) {
+        //         var temp = arr[n];
+        //         arr[n] = arr[n+1];
+        //         arr[n+1] = temp;
+        //     }
+        // }
+        // console.log('第六轮比较之后：', arr);
+
+
+
+    </script>
+</body>
+</html>

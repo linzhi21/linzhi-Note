@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        console.log('hello'.match(/l/));
+        console.log('hello'.match(/ll/));
+        console.log('hello'.match(/llh/));
+        console.log('hello'.match(/\w/));
+        console.log('hello'.match(/\w\w\w/));
+        console.log('hello'.match(/l\w[a-z]/)); // llo
+        console.log('hello'.match(/\d\w[a-z]/)); // null
+        console.log('');
+        console.log('');
+
+
+        console.log('hello'.match(/h{3}a/));
+        console.log('ahhha'.match(/h{3}a/));
+        console.log('ahhha'.match(/\w{3}\w/));
+        console.log('');
+
+        console.log('abcdefghigklmn'.match(/[a-z]{4}/));
+        console.log('abcdefg-higklmn'.match(/\w{4,}/));
+        console.log('abc'.match(/\w{4,}/));
+        console.log('abcdefg-higklmn'.match(/\w{4,6}/));
+        console.log('abcd'.match(/\w{4,6}/));
+        console.log('');
+
+
+        // {0,1}
+        console.log('hello'.match(/高/));
+        console.log('hello'.match(/高?/));
+        console.log('hel高lo'.match(/高?/));
+        console.log('hel高高高lo'.match(/高?/));
+        console.log('');
+
+        // + {1,}
+        console.log('hello'.match(/\w+/));
+        console.log('123123'.match(/\w+/));
+        console.log('高小a乐'.match(/\w+/));
+        console.log('');
+
+
+        // * 0次、1次或多次  {0,}
+        console.log('hello'.match(/\w*/));
+        console.log('123123'.match(/\w*/));
+        console.log('高小乐'.match(/\w*/));
+        console.log('a高小乐'.match(/\w*/));
+        console.log('aasdfadsf高小b乐'.match(/\w*/));
+        console.log('');
+
+        // 阻止贪婪匹配
+        console.log('abcdefghigklmn'.match(/\w{4,9}/));
+        console.log('abcdefghigklmn'.match(/\w{4,9}?/));
+        console.log('abcdefghigklmn'.match(/.*?/));
+
+
+    </script>
+</body>
+</html>

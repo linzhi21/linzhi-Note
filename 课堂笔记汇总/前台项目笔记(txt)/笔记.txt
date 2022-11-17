@@ -1,0 +1,56 @@
+
+
+	nvm (node version manage)
+	
+	能够在同一台电脑维护多个版本的 node 
+	
+	之前从官网下载 .exe 的文件来进行使用的，只能安装一个版本的 node
+	
+	
+	-----------------
+	
+	
+	a(10)   b(14)   c(16)
+	
+	
+	-----------------
+	
+	nvm 需要从官网(github) 下载对应的安装包
+	
+	
+	-----------------
+	
+	nvm version 		：查看 nvm 的版本
+	
+	nvm ls      		：查看当前电脑上安装的 node 版本
+	
+	nvm install 版本号  ：安装对应版本的 node
+	
+	nvm use 版本号		：切换到哪一个 node 版本
+	
+	
+	------
+	
+	如何移除 nvm 安装的 Node 版本
+	
+	nvm uninstall 版本号
+	
+	--------------------
+	
+	
+	
+	1. 删除 .git
+	
+	2. 删除 .github
+	
+	3. 从 package.json 中移除  tui-editor
+	
+	4. 将 tui-editor 有关代码全部注释/删除
+	
+	5. 安装依赖
+	
+	6. npm run dev
+	
+	
+	
+	

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        function A() {
+            // 声明变量
+            var x = 10;
+            var y = 20;
+            
+            // 第一步： 函数B定义在函数A的里面
+            function B() {
+                // 第二步 函数B使用上层作用域（函数A）中的数据
+                console.log(x, y);
+            }
+
+            // 第三步，将函数B被外部引用
+            // 第一种方式 将函数B返回
+            return B;
+            // 第二种方式 将函数B设置为window的属性
+            // window.B = B;
+            // 第三种方式 将函数B作为异步操作的回调函数
+            // document.onclick = B;
+            // setInterval(B, 1000);
+        }
+
+
+        // 调用函数 A
+        var res = A();
+        // res();
+
+        //B();
+
+
+    </script>
+</body>
+</html>

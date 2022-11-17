@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 开启多次定时器 返回定义器标记
+        var interval01 = setInterval(function(arg) {
+            console.log('你好，你是高小乐吗？听说你挺牛逼啊', arg);
+        }, 3000, Math.random());
+        console.log('');
+
+        // 开启多次定时器 返回定时器标记
+        var interval02 = setInterval(run, 500);
+        function run() {
+            var r = Math.floor(Math.random() * 256);
+            var g = Math.floor(Math.random() * 256);
+            var b = Math.floor(Math.random() * 256);
+            // 给body设置背景颜色
+            document.body.style.background = 'rgb('+r+','+g+','+b+')';
+        }
+
+        //console.log(interval01);
+        //console.log(interval02);
+
+        // 当点击整个文档的时候
+        document.onclick = function() {
+            // 清除定时器
+            clearInterval(interval01);
+            clearInterval(interval02);
+        };
+    </script>
+</body>
+</html>

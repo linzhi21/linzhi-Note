@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+        }
+        .section {
+            line-height: 500px;
+            font-size: 60px;
+            text-align: center;
+            border-bottom: 4px dashed #999;
+        }
+
+        .nav {
+            position: fixed;
+            right: 0;
+            bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+   
+
+    <div class="section section01">思恶君子才夭我，在。</div>
+    <div class="section section02">劫为国求谢，逝着于地人惜罪见。</div>
+    <div class="section section03">玉二我么德打藏从骂。</div>
+    <div class="section section04">们娘君死谓好普，别。</div>
+    <div class="section section05">惊派互行姑找人是否。</div>
+
+    <div class="nav">
+        <button id="btn01">返回顶部</button>
+        <br>
+        <button id="btn02">向上滚动</button>
+        <br>
+        <button id="btn03">向下滚动</button>
+    </div>
+
+
+    <script>
+        // 获取到元素
+        var btn01 = document.getElementById('btn01');
+        // 给btn01监听事件
+        btn01.onclick = function() {
+            // window.scrollTo(0, 0);
+            window.scrollTo({
+                top: 0,
+                behavior:'smooth'
+            });
+        };
+
+
+        // 向上滚动
+        var btn02 = document.getElementById('btn02');
+        // 监听事件
+        btn02.onclick = function() {
+            // window.scrollBy(0, -500);
+            window.scrollBy({
+                top: -500,
+                behavior: 'smooth'
+            });
+        };
+
+
+        // 向下滚动
+        var btn03= document.getElementById('btn03');
+        // 监听事件
+        btn03.onclick = function() {
+            // window.scrollBy(0, 500);
+            window.scrollBy({
+                top: 500,
+                behavior: 'smooth'
+            });
+        };
+
+    </script>
+</body>
+</html>

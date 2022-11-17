@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table {
+            width: 800px;
+            table-layout: fixed;
+            border-collapse: collapse;
+        }
+        td,th {
+            padding: 10px;
+            border: 1px solid #999;
+        }
+        input {
+            margin: 10px 0;
+            width: 300px;
+            padding: 10px;
+            border: 1px solid #999;
+            outline: none;
+        }
+    </style>
+</head>
+<body>
+    <table id="table">
+        <tbody>
+            <tr>
+                <th>序号</th>
+                <th>姓名</th>
+                <th>地址</th>
+                <th>年龄</th>
+                <th>操作</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>曹操</td>
+                <td>深圳</td>
+                <td>45</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>刘备</td>
+                <td>乌鲁木齐</td>
+                <td>35</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>孙权</td>
+                <td>齐齐哈尔</td>
+                <td>25</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>诸葛亮</td>
+                <td>呼和浩特</td>
+                <td>25</td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <hr>
+
+    <input type="text" placeholder="姓名" id="nameInp">  <br>
+    <input type="text" placeholder="地址" id="addressInp">  <br>
+    <input type="text" placeholder="年龄" id="ageInp">  <br>
+    <button id="addBtn">添加</button>
+    <button id="deleteBtn">删除最后一行</button>
+
+    <script>
+        // 获取元素
+        var tableBox = document.querySelector('#table');
+        var nameInput = document.querySelector('#nameInp');
+        var addressInput = document.querySelector('#addressInp');
+        var ageInput = document.querySelector('#ageInp');
+        var addBtn = document.querySelector('#addBtn');
+
+        // 点击添加 表格中添加一行
+        addBtn.onclick = function() {
+            // 创建tr并添加到table中
+            var tr = tableBox.insertRow();
+            // 给 tr 添加单元格
+            tr.insertCell(0).innerHTML = tr.rowIndex;
+            tr.insertCell(1).innerHTML = nameInput.value;
+            tr.insertCell(2).innerHTML = addressInput.value;
+            tr.insertCell(3).innerHTML = ageInput.value;
+            tr.insertCell(4);
+        };
+
+        // 点击删除最后一行
+        deleteBtn.onclick = function() {
+            tableBox.deleteRow(tableBox.rows.length-1);
+        };
+
+    </script>
+</body>
+</html>

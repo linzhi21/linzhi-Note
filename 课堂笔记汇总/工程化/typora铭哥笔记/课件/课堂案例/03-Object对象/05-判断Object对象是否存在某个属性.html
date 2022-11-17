@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 声明对象
+        var obj = {
+            name: '高小乐',
+            age: 19,
+            'scholl-address': '上海',
+            users: [100,300,400,534,3434],
+            child: {name:'obj2-child'},
+            getInfo: function() {
+                console.log('getInfo')
+            },
+            'set*name': function() {
+                console.log('set*name');
+            }
+        };
+        
+        var prop = 'users';
+
+        // in 二元运算符
+        console.log('name' in obj);
+        console.log('age' in obj);
+        console.log(prop in obj);
+        console.log('address' in obj);
+       
+
+    </script>
+    
+</body>
+</html>

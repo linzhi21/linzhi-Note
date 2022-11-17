@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>读写内置属性</h1>
+    <hr>
+    <button id="btn01">获取属性值</button>
+    <button id="btn02">修改图片</button>
+    <button id="btn03">大</button>
+    <hr>
+    <img id="box" src="images/小乐.jpg" alt="小乐好可爱" title="可爱的小乐" width="300" loadpic="100.jpg">
+
+    <script>
+        // 获取到所有需要用到的元素
+        var imgBox = document.querySelector('#box');
+        var btn01 = document.querySelector('#btn01');
+        var btn02 = document.querySelector('#btn02');
+        var btn03 = document.querySelector('#btn03');
+
+
+
+        // 点击按钮 获取图片元素的属性值
+        btn01.onclick = function() {
+            console.log('alt:', imgBox.alt);
+            console.log('title:', imgBox.title);
+            console.log('id:', imgBox.id);
+            console.log('width:', imgBox.width);
+            console.log('src:', imgBox.src);
+            console.log('height:', imgBox.height);
+            console.log('自定义属性loadpic：', imgBox.loadpic);
+        };
+
+        // 点击按钮 修改图片的 src 属性
+        btn02.onclick = function() {
+            imgBox.src = 'images/shanghai.jpg';
+            imgBox.loadpic = '高小乐';  // 仅仅设置到了js对象上
+        };
+
+        // 点击图片变大
+        btn03.onclick = function() {
+            imgBox.width += 10;
+        };
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .images {
+            margin: 50px auto;
+            width: 1000px;
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .images img {
+            margin: 10px;
+            width: 230px;
+            height: 230px;
+        }
+    </style>
+</head>
+<body>
+    <div class="images">
+        <img src="images/db01.jpg" alt="图片">
+        <img src="images/db02.jpg" alt="图片">
+        <img src="images/db03.jpg" alt="图片">
+        <img src="images/db04.jpg" alt="图片">
+        <img src="images/db0114.jpg" alt="图片">
+        <img src="images/db05.jpg" alt="图片">
+        <img src="images/db06.jpg" alt="图片">
+        <img src="images/db07.jpg" alt="图片">
+        <img src="images/db0799.jpg" alt="图片">
+        <img src="images/db08.jpg" alt="图片">
+        <img src="images/db09.jpg" alt="图片">
+        <img src="images/db019.jpg" alt="图片">
+        <img src="images/db10.jpg" alt="图片">
+        <img src="images/db01.jpg" alt="图片">
+        <img src="images/db02.jpg" alt="图片">
+        <img src="images/db03.jpg" alt="图片">
+        <img src="images/db04.jpg" alt="图片">
+        <img src="images/db05.jpg" alt="图片">
+        <img src="images/db06.jpg" alt="图片">
+        <img src="images/db07.jpg" alt="图片">
+        <img src="images/db08.jpg" alt="图片">
+        <img src="images/db09.jpg" alt="图片">
+        <img src="images/db10.jpg" alt="图片">
+        <img src="images/db01.jpg" alt="图片">
+        <img src="images/db02.jpg" alt="图片">
+        <img src="images/db03.jpg" alt="图片">
+        <img src="images/db04.jpg" alt="图片">
+        <img src="images/db05.jpg" alt="图片">
+        <img src="images/db06.jpg" alt="图片">
+        <img src="images/db07.jpg" alt="图片">
+        <img src="images/db08.jpg" alt="图片">
+        <img src="images/db09.jpg" alt="图片">
+        <img src="images/db10.jpg" alt="图片">
+        <img src="images/db01.jpg" alt="图片">
+        <img src="images/db02.jpg" alt="图片">
+        <img src="images/db03.jpg" alt="图片">
+        <img src="images/db04.jpg" alt="图片">
+        <img src="images/db05.jpg" alt="图片">
+        <img src="images/db06.jpg" alt="图片">
+        <img src="images/db07.jpg" alt="图片">
+        <img src="images/db08.jpg" alt="图片">
+        <img src="images/db09.jpg" alt="图片">
+        <img src="images/db10.jpg" alt="图片">
+    </div>
+
+    <script>
+        (function() {
+            // 获取所有的图片元素
+            var imgItems = document.querySelectorAll('.images img');
+
+            // 遍历所有图片元素 监听事件
+            imgItems.forEach(function(imgItem) {
+                imgItem.onerror = function() {
+                    imgItem.src = 'images/noimage.png';
+                };
+            });
+        })()
+    </script>
+</body>
+</html>

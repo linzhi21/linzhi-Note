@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 受到新消息之后 使用js修改页面标题
+        document.title = '【你有一条新消息】澳门最大的在线赌场上线了，性感荷官在线发牌';
+
+        // 定时器
+        setInterval(function() {
+            // 取出第一个字符，放在最后面
+            document.title = document.title.slice(1) + document.title[0]
+        }, 300)
+     
+
+    </script>
+</body>
+</html>

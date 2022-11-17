@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        console.log([10,20,30,40,50,50].length);
+        console.log('hello'.length);
+        console.log('');
+
+
+        // 匿名函数（函数直接量）直接调用 IIFE
+        (function() {
+            console.log('啊，我执行了');
+        })();
+        
+
+        // IIFE 传参数
+        (function(name, age) {
+            console.log('姓名：',name);
+            console.log('年龄：',age);
+        })('高小乐', 100);
+        console.log('');
+        console.log('');
+
+        // 有名字的函数作为 IIEF
+        (function func() {
+            console.log('func被调用了');
+        })();
+        
+        
+
+    </script>
+</body>
+</html>

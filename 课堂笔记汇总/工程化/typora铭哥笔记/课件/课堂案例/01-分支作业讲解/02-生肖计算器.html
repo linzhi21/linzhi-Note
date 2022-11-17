@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>生肖计算器</title>
+</head>
+<body>
+    <script>   
+        /*
+           2020 鼠年   %12 = 4
+           2021 牛年   %12 = 5
+           2022 虎年   %12 = 6
+           2023 兔年   %12 = 7
+           2024 龙年   %12 = 8
+           2025 蛇年   %12 = 9
+           2026 马年   %12 = 10
+           2027 羊年   %12 = 11
+           2028 猴年   %12 = 0
+           2029 鸡年   %12 = 1
+           2030 狗年   %12 = 2
+           2031 猪年   %12 = 3
+        */
+
+        // 获取用户输入的年份
+        var year = prompt('请输入您的出生年份(公元纪年)：');
+
+        // 判断
+        switch (year % 12) {
+            case 0: alert(year + '出生的您是属猴的！'); break;
+            case 1: alert(year + '出生的您是属鸡的！'); break;
+            case 2: alert(year + '出生的您是属狗的！'); break;
+            case 3: alert(year + '出生的您是属猪的！'); break;
+            case 4: alert(year + '出生的您是属鼠的！'); break;
+            case 5: alert(year + '出生的您是属牛的！'); break;
+            case 6: alert(year + '出生的您是属虎的！'); break;
+            case 7: alert(year + '出生的您是属兔的！'); break;
+            case 8: alert(year + '出生的您是属龙的！'); break;
+            case 9: alert(year + '出生的您是属蛇的！'); break;
+            case 10: alert(year + '出生的您是属马的！'); break;
+            case 11: alert(year + '出生的您是属羊的！'); break;
+            default: alert(year + '出生的您是属驴的！');
+        }
+    </script>
+</body>
+</html>

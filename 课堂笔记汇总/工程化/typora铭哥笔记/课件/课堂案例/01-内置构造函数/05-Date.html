@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 创建日期时间对象
+        var date01 = new Date();
+        // 创建日期时间对象 指定日期时间
+        var date02 = new Date('December 17, 1995 03:24:00');
+        // 创建日期时间对象 指定日期时间
+        var date03 = new Date('2020-10-02T12:09:16');
+        // 创建日期时间对象 指定日期时间
+        var date04 = new Date(1990, 9, 1, 10, 9, 15);
+
+        console.log(date01);
+        console.log(date02);
+        console.log(date03);
+        console.log(date04);
+        console.log('');
+
+        // 修改 date01 中的日期和时间
+        date01.setFullYear(1876);
+        date01.setHours(10);
+        date01.setUTCHours(12);
+        date01.setTime(1000000000000);
+
+        // 获取获取 年月日时分秒
+        console.log('年：', date01.getFullYear());
+        console.log('月：', date01.getMonth() + 1);
+        console.log('星期几：', date01.getDay());
+        console.log('日：', date01.getDate());
+        console.log('时：', date01.getHours());
+        console.log('分：', date01.getMinutes());
+        console.log('秒：', date01.getSeconds());
+        console.log('毫秒：', date01.getMilliseconds());
+        console.log('');
+
+
+        // UTC时间  零时区的时间 
+        console.log('零时区的年：', date01.getUTCFullYear());
+        console.log('零时区的月：', date01.getUTCMonth() + 1);
+        console.log('零时区的日：', date01.getUTCDate());
+        console.log('零时区的时：', date01.getUTCHours());
+        console.log('零时区的分钟：', date01.getUTCMinutes());
+        console.log('');
+
+
+        // 获取时间戳  UNIX时间戳
+        console.log('时间戳：', date01.getTime());
+        console.log('');
+        console.log('');
+
+
+
+        // 构造函数本身的方法 Date
+        console.log(Date.now());
+        console.log(Date.UTC(2000, 10, 1, 10,9,18));
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 定义正则表达式
+        var reg = /hello/;
+
+        console.log(reg);
+        console.log(reg.constructor); // RegExp
+        console.log(reg instanceof RegExp);   // true
+        console.log('');
+
+        // 定义字符串
+        var str = 'hello world';
+
+        console.log(str.match(reg));
+        console.log(str.match(/world/));
+        console.log(str.match(/高小乐/));
+        console.log(str.match(/l/));
+
+    </script>
+</body>
+</html>

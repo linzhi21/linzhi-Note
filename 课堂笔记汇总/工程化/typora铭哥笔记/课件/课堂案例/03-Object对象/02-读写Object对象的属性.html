@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 声明对象
+        var obj = {
+            name: '高小乐',
+            age: 19,
+            'scholl-address': '上海',
+            users: [100,300,400,534,3434],
+            child: {name:'obj2-child'},
+            getInfo: function() {
+                console.log('getInfo')
+            },
+            'set*name': function() {
+                console.log('set*name');
+            }
+        };
+
+        /**
+         *   .语法
+         *   [] 语法
+        */
+
+        // 读操作
+        console.log(obj.name);
+        console.log(obj['name']);
+        obj.getInfo();
+        obj['getInfo']();
+        console.log(obj.age * 100);
+        console.log(obj.address);
+        // obj.getName();
+        console.log('');
+
+        // 写操作
+        obj.name = '低大悲';
+        obj['age'] += 10;   // obj['age'] = obj['age'] + 10;
+        obj.address = '北京';
+        obj.child.name = '高老乐';
+        obj.users[0] = 'hello';
+        console.log(obj);
+        console.log('');
+
+
+        // 如果属性名不符合标识符规范
+        console.log(obj['scholl-address']);
+        obj['set*name']();
+        console.log('')
+        // 使用变量表示属性名
+        var prop = 'users';
+        console.log(obj.prop);
+        console.log(obj['prop']);
+        console.log(obj[prop]);
+
+    </script>
+</body>
+</html>

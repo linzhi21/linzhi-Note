@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /**
+         * 1. 函数是我定义的
+         * 2. 我没有调用函数
+         * 3. 函数却执行了
+        */
+        
+        // 定义数组
+        var nameList = ['刘姥姥', '欧阳姥姥', '司马姥姥', '东方姥姥', '西门姥姥', '令狐姥姥'];
+
+        // 数组方法 forEach 
+        nameList.forEach(function(item,index) {
+            console.log('啊，我是回调函数', item, index);
+        });
+        console.log('');
+
+
+        // 有名字的函数作为回调函数
+        nameList.forEach(func);
+
+        function func(item) {
+            console.log('func被调用了', item);
+        }
+
+    </script>
+</body>
+</html>

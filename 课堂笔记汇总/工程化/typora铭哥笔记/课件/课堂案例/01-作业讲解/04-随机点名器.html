@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .rand-box {
+            margin-top: 100px;
+            text-align: center;
+        }
+        .rand-box .content {
+            font-size: 120px;
+            color: #fff;
+            text-shadow: 0 0 10px #000;
+            font-weight: 700;
+        }
+        .rand-box button {
+            width: 120px;
+            height: 120px;
+            font-size: 30px;
+            background-color: transparent;
+            border: 10px solid #999;
+            border-radius: 50%;
+            color: #999;
+        }
+    </style>
+</head>
+<body>
+    <div class="rand-box">
+        <div class="content" id="box">随机点名器</div>
+        <button id="btn">开始</button>
+        <script>
+            (function() {
+                // 获取显示名字的元素
+                var box = document.querySelector('#box');
+                // 获取按钮元素
+                var btn = document.querySelector('#btn');
+
+                // 定义数组 存储名字列表
+                var nameList = ['曹操', '诸葛亮', '夏侯惇', '周瑜', '孙权', '小乔', '大乔', '孙策', '孙坚', '曹丕', '曹植', '公孙瓒', '夏侯渊', '司马懿'];
+                // 定义变量 记录当前的状态
+                var isRuning = false;
+                // 定义变量 记录定时器事件间隔
+                var duration = 100;
+                // 定义变量 记录定时标记
+                var intervalId = null;
+
+                // 点击按钮
+                btn.onclick = function() {
+                    if (isRuning) {
+                        // 停止
+                        btn.innerHTML = '继续';
+                        isRuning = false;
+
+                        // 停止定时器
+                        clearInterval(intervalId);
+                    } else {
+                        // 开始随机点名
+                        btn.innerHTML = '暂停';
+                        isRuning = true;
+
+                        // 开启定时器
+                        intervalId = setInterval(randRun, duration);
+                    }
+                };
+
+
+                function randRun() {
+                    // 随机从数组中获取元素
+                    var randIndex = Math.floor(nameList.length * Math.random());
+                    box.innerHTML = nameList[randIndex];
+                }
+
+            })();
+        </script>
+    </div>
+</body>
+</html>

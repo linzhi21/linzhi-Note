@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 第一种声明数组方式 直接量方式
+        var arr1 = [];
+        var arr2 = [100,200,'高小乐', true, null, undefined, ['aaa', 'bbb', 'ccc']];
+        console.log(arr1, typeof(arr1));
+        console.log(arr2);
+        console.log('');
+
+
+        // 第二种方式 Array() 函数
+        var arr3 = Array();
+        var arr4 = Array('高小乐', '低大悲', 1000, 2000, arr2);
+        var arr5 = Array('hello');
+        var arr6 = Array(12);
+        var arr7 = [12];
+
+        console.log(arr3);
+        console.log(arr4);
+        console.log(arr5);
+        console.log(arr6);
+        console.log(arr7);
+        console.log('');
+
+
+        // 第三种方式 Array() 构造函数
+        var arr8 = new Array();
+        var arr9 = new Array('高小乐', '低大悲', 1000, 2000, arr2);
+        var arr10 = new Array('hello');
+        var arr11 = new Array(12);
+
+        console.log(arr8);
+        console.log(arr9);
+        console.log(arr10);
+        console.log(arr11);
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // i 表示不区分大小写
+        console.log('hello'.match(/LL/));
+        console.log('hello'.match(/LL/i));
+        console.log('');
+
+
+        // m 多行匹配
+        console.log('hello\nworld'.match(/hello$/m));
+        console.log('hello\nworld'.match(/^world/m));
+
+    </script>
+</body>
+</html>

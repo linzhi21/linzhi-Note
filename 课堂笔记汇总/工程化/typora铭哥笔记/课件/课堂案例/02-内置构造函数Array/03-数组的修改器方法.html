@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 创建数组
+        var nameList = ['刘姥姥', '牛姥姥', '欧阳姥姥', '司马姥姥', '西门姥姥', '东方姥姥'];
+
+        // 添加元素
+        console.log(nameList.push('独孤姥姥'));
+        console.log(nameList);
+        console.log('');
+
+
+        // 添加元素
+        console.log(nameList.unshift('爱新觉罗姥姥'));
+        console.log(nameList);
+        console.log('');
+
+
+        // 删除元素
+        console.log(nameList.pop());
+        console.log(nameList);
+        console.log('');
+
+
+        console.log(nameList.shift());
+        console.log(nameList);
+        console.log('');
+
+
+        console.log(nameList.splice(2, 1, '伊丽莎白姥姥', '维多利亚姥姥'));
+        console.log(nameList);
+        console.log('');
+
+
+        // 翻转数组
+        console.log(nameList.reverse());
+        console.log(nameList);
+        console.log('');
+
+
+        // sort 排序
+        console.log(nameList.sort());
+        console.log(nameList);
+    </script>
+</body>
+</html>

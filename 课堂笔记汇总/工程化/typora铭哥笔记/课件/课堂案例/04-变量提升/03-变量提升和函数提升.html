@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        console.log(age);  // 函数体
+        age();
+        
+        var age = 100;
+        function age() {
+            console.log('我是age，我是函数');
+        }
+        console.log(age);
+        console.log('');
+        console.log('');
+
+
+
+        console.log(address);  // undefeind
+        //address();  // 报错
+
+        var address = '上海';
+        var address = function() {
+            console.log('我是函数 address');
+        };
+
+        console.log(address);  // 
+        address();
+
+
+
+
+
+    
+       
+       
+    </script>
+</body>
+</html>

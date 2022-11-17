@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 单词边界   \b  \B
+        console.log('world hello script'.match(/o/));
+        console.log('world hello script'.match(/o\b/));
+        console.log('world hello script'.match(/\bo/));
+        console.log('world hello script'.match(/\bw/));
+        console.log('world hello script'.match(/\bw\b/));
+        console.log('world hello script'.match(/\bhello\b/));
+        console.log('world hello script'.match(/\Bhello/));
+        console.log('world hello script'.match(/\Bo\B/));
+        console.log('');
+
+
+        // 字符串边界  ^ $
+        console.log('hello world'.match(/^w/));
+        console.log('hello world'.match(/^hello/));
+        console.log('hello world'.match(/^hello$/));
+        console.log('hello world'.match(/world$/));
+        console.log('asdfa13587873445232323'.match(/1[3-9]\d{9}/));
+        console.log('asdfa13587873445232323'.match(/^1[3-9]\d{9}$/));
+        console.log('13587871234'.match(/^1[3-9]\d{9}$/));
+    </script>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul {
+            list-style: none;
+            padding-left: 0;
+        }
+    </style>
+</head>
+<body>
+    <ul id="selectedBox">
+        <li>
+            <input type="checkbox">
+            专动爻人好春何事王意韩姑是人念，治韩圣。
+        </li>
+        <li>
+            <input type="checkbox">
+            专动爻人好春何事王意韩姑是人念，治韩圣。
+        </li>
+        <li>
+            <input type="checkbox">
+            专动爻人好春何事王意韩姑是人念，治韩圣。
+        </li>
+        <li>
+            <input type="checkbox">
+            专动爻人好春何事王意韩姑是人念，治韩圣。
+        </li>
+        <li>
+            <input type="checkbox">
+            专动爻人好春何事王意韩姑是人念，治韩圣。
+        </li>
+        <li>
+            <input type="checkbox">
+            专动爻人好春何事王意韩姑是人念，治韩圣。
+        </li>
+    </ul>
+
+    <hr>
+    <input type="checkbox" id="checkAll"> 全选
+
+    <script>
+        (function() {
+            // 获取所有复选框的集合
+            var checkboxs = document.querySelectorAll('#selectedBox input');
+            // 获取全选的复选框
+            var checkAll = document.querySelector('#checkAll');
+
+            // 点击全选复选框
+            checkAll.onclick = function() {
+                // 遍历复选框选项
+                checkboxs.forEach(function(checkbox) {
+                    checkbox.checked = checkAll.checked;
+                });
+            };
+
+        })();
+    </script>
+
+</body>
+</html>

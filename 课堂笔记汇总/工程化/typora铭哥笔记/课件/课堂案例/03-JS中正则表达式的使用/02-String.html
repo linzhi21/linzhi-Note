@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 匹配邮箱
+        // abc@173.com / abc@sina.com.cn
+        var reg = /^[\w-]+@[\w-]+(\.[\w-]+){1,3}$/
+
+        // search
+        console.log('abc@163.com'.search(reg));  // 0
+        console.log('高小乐@163.com'.search(reg));  // -1
+        console.log('');
+
+        // split()  将字符串分割为数组
+        var msg = 'hello,world,高小乐,apple;baner.orange;yellow,blue.green';
+
+        // 以逗号为分割符
+        console.log(msg.split(','));
+
+        // 以逗号、分号或者句号 为分割符
+        console.log(msg.split(/[,;\.]/));
+
+
+
+    </script>
+</body>
+</html>

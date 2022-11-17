@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+
+    <div id="box"></div>
+
+    <img src="http://www.google.com/products/ing.jpg" alt="">
+
+    <script>
+        
+
+         // 给 window 监听 load 事件
+         window.onload = function() {
+            var box = document.querySelector('#box');
+            console.log(box, 'load 事件');
+        };
+
+
+        // 给 window 监听 DOMContentLoaded 事件
+        window.addEventListener('DOMContentLoaded', function() {
+            var box = document.querySelector('#box');
+            console.log(box, 'DOMContentLoaded事件');
+        })
+    </script>
+</body>
+</html>

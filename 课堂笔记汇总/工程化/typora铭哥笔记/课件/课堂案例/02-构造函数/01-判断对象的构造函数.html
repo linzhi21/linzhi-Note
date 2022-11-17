@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 定义数组
+        var arr = [];
+        // 定义 Object 对象
+        var obj = {};
+        // 定义函数
+        var fn = function() {}
+        // 日期对象
+        var d = new Date();
+
+
+        // constructor 是所有对象都具有的属性
+        console.log(arr.constructor);    // Array
+        console.log(obj.constructor);    // Object
+        console.log(fn.constructor);     // Function 
+        console.log(d.constructor);      // Date
+        console.log('');
+
+
+        // instanceof
+        console.log(arr instanceof Array);      // true
+        console.log(arr instanceof Function);  // false
+        console.log(fn instanceof Function);
+    </script>
+</body>
+</html>

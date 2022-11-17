@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 声明全局变量
+        var username = '高大乐';
+        var age = 100;
+        var address = '上海';
+        var email = 'abc@qq.com';
+
+
+        // 声明函数
+        function fn01() {
+            // 声明变量
+            var username = '高二乐';
+            var age = 200;
+            var address = '北京';
+            // 声明函数
+            function fn02() {
+                 // 声明变量
+                var username = '高三乐';
+                var age = 300;
+                // 声明函数
+                function fn03() {
+                    // 声明变量
+                    var username = '高四乐';
+                    // 输出变量
+                    console.log(username);      // 高四乐
+                    console.log(age);           // 300
+                    console.log(address);       // 北京
+                    console.log(email);         // abc@qq.com
+                    console.log(job);           // 报错
+                }
+                // 调用 fn03
+                fn03();
+            } 
+            // 调用 fn02
+            fn02();
+        }
+
+        // 调用 fun01
+        fn01();
+        
+
+
+    </script>
+</body>
+</html>

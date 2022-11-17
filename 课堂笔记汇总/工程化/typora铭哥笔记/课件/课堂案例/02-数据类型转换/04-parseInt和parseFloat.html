@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+          从字符串中提取数字
+        */
+
+        console.log(parseInt('198'));      // 198
+        console.log(parseInt('198abc'));   // 198
+        console.log(parseInt('abc78'));    //  NaN
+        console.log(parseInt(''));         // NaN
+        console.log(parseInt('  19 '));         // NaN
+        console.log(parseInt(true));       // NaN
+        console.log(parseInt(false));       // NaN
+        console.log(parseInt(undefined));       // NaN
+        console.log(parseInt(null));       // NaN
+        console.log('');
+
+
+
+        // parseInt 和 parseFloat
+        var msg = '195.789abc';
+
+        console.log(parseInt(msg));    // 195
+        console.log(parseFloat(msg));    // 195.789
+        console.log('');
+
+        // 使用parseInt 进行取整数操作
+        console.log(parseInt(17.734));
+
+
+  </script>
+</body>
+</html>

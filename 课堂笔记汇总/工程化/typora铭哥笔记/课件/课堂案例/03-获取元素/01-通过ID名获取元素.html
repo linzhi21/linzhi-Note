@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .item {
+            margin: 20px 0;
+            padding: 20px;
+            width: 500px;
+            border: 2px dashed #099;
+        }
+    </style>
+</head>
+<body>
+    <h1>通过ID名获取元素</h1>
+    <hr>
+    <div class="item" id="box01">得人尚杀能生找报如馆绛仃，俭让回爱，游太不，姑要了之呼到绪的洪台反谓手，非才关感送云志在舟者成常，订百此应但落有至事看路司愿秦即，上的派婵承预，郭没言谭欲苟生降人人别，么京是世我使李，才的人性而得即薪措成韦如洪嗣，你韩快着承即诗极，谭向国耐，张洪的病，事。</div>
+    <div class="item" id="box01">得人尚杀能生找报如馆绛仃，俭让回爱，游太不，姑要了之呼到绪的洪台反谓手，非才关感送云志在舟者成常，订百此应但落有至事看路司愿秦即，上的派婵承预，郭没言谭欲苟生降人人别，么京是世我使李，才的人性而得即薪措成韦如洪嗣，你韩快着承即诗极，谭向国耐，张洪的病，事。</div>
+    <div class="item" id="box02">罚为药司他何意新得郭中，侯由夫间胜当快会肯也落老马仃骂，秦就于，山侯用能也看终书郭韩完，攻哉者爱其道由郭尚老则恩了起二，也的在战从胆互其惊所兄老的求，者为韩年了次他之勇无担妙高太说反，打登变宋第攻光斯逃明亡又能，是以榜君历了因，了而落杨同服在失，起反或气。</div>
+
+    <script>
+        // 获取ID名是 box01 的元素
+        var box01 = document.getElementById('box01');
+        console.log(box01);
+        console.log(box01.innerHTML);
+        box01.style.border = '4px solid #990';
+        console.log('');
+
+
+        // 获取ID名是 box02 的元素
+        var box02 = document.getElementById('box02');
+        console.log(box02);
+        console.log('');
+    
+        // 获取ID名是 box03 的元素
+        var box03 = document.getElementById('box03');
+        console.log(box03);
+        // box03.style.border = '10px solid #f00';
+    </script>
+</body>
+</html>

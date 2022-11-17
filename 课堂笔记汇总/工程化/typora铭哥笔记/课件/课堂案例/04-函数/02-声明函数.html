@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 第一种方式
+        // function 关键字方式
+        function fn01() {
+            console.log('hello, fn01');
+        }
+        function fn02(name, age) {
+            console.log('我叫' + name + ', 我今年' + age + '岁');
+        }
+
+        // 调用函数
+        fn01();
+        fn02('高小乐', 89);
+        fn02('低大悲', 43);
+        console.log('');
+        console.log('');
+
+
+
+        // 第二种方式 表达式方式
+        var fun01 = function() {
+            console.log('Hello,fun01');
+        }
+        var fun02 = function(name1,name2) {
+            console.log(name1 + '和' + name2 + '跳舞！');
+        }
+        fun01();
+        fun02('高希拉尔', '低大悲');
+        console.log('');
+
+
+        // 第三种方式 Function 方式
+        var f001 = Function('console.log("hello,f001")');
+        var f002 = Function('a', 'b', 'console.log(a+b)');
+        f001();
+        f002(10, 56);
+
+        // 第四种方式 Function 构造函数
+        var f003 = new Function('console.log("hello,f001")');
+        var f004 = new Function('a', 'b', 'console.log(a+b)');
+        f003();
+        f004(10, 20);
+
+
+    </script>
+</body>
+</html>

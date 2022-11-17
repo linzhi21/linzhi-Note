@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 该对象创建完 就变垃圾
+        {};
+
+        // 变量obj引用了对象， 
+        // 变量 obj 指向了其他对象，原对象如果没有引用，变垃圾
+        // 变量obj在程序执行结束后被销毁，obj指向的对象变垃圾
+        var obj = {};
+        obj = [];
+
+
+        obj.address = [10,20,30,40];
+
+
+
+    </script>
+</body>
+</html>

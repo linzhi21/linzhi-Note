@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .wrapper {
+            margin: 0 auto;
+            width: 880px;
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .wrapper img {
+            margin: 10px;
+            width: 200px;
+            height: 200px;
+            border: none;
+            background: #eee;
+            opacity: 0;
+            transition: opacity 500ms;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <img data-src="images/db01.jpg">
+        <img data-src="images/db02.jpg">
+        <img data-src="images/db03.jpg">
+        <img data-src="images/db04.jpg">
+        <img data-src="images/db05.jpg">
+        <img data-src="images/db06.jpg">
+        <img data-src="images/db07.jpg">
+        <img data-src="images/db08.jpg">
+        <img data-src="images/db09.jpg">
+        <img data-src="images/db10.jpg">
+        <img data-src="images/db01.jpg">
+        <img data-src="images/db02.jpg">
+        <img data-src="images/db03.jpg">
+        <img data-src="images/db04.jpg">
+        <img data-src="images/db05.jpg">
+        <img data-src="images/db06.jpg">
+        <img data-src="images/db07.jpg">
+        <img data-src="images/db08.jpg">
+        <img data-src="images/db09.jpg">
+        <img data-src="images/db10.jpg">
+        <img data-src="images/db01.jpg">
+        <img data-src="images/db02.jpg">
+        <img data-src="images/db03.jpg">
+        <img data-src="images/db04.jpg">
+        <img data-src="images/db05.jpg">
+        <img data-src="images/db06.jpg">
+        <img data-src="images/db07.jpg">
+        <img data-src="images/db08.jpg">
+        <img data-src="images/db09.jpg">
+        <img data-src="images/db10.jpg">
+        <img data-src="images/db01.jpg">
+        <img data-src="images/db02.jpg">
+        <img data-src="images/db03.jpg">
+        <img data-src="images/db04.jpg">
+        <img data-src="images/db05.jpg">
+        <img data-src="images/db06.jpg">
+        <img data-src="images/db07.jpg">
+        <img data-src="images/db08.jpg">
+        <img data-src="images/db09.jpg">
+        <img data-src="images/db10.jpg">
+        <img data-src="images/db01.jpg">
+        <img data-src="images/db02.jpg">
+        <img data-src="images/db03.jpg">
+        <img data-src="images/db04.jpg">
+        <img data-src="images/db05.jpg">
+        <img data-src="images/db06.jpg">
+        <img data-src="images/db07.jpg">
+        <img data-src="images/db08.jpg">
+        <img data-src="images/db09.jpg">
+        <img data-src="images/db10.jpg">
+        <img data-src="images/db01.jpg">
+        <img data-src="images/db02.jpg">
+        <img data-src="images/db03.jpg">
+        <img data-src="images/db04.jpg">
+        <img data-src="images/db05.jpg">
+        <img data-src="images/db06.jpg">
+        <img data-src="images/db07.jpg">
+        <img data-src="images/db08.jpg">
+        <img data-src="images/db09.jpg">
+        <img data-src="images/db10.jpg">
+        <img data-src="images/db01.jpg">
+        <img data-src="images/db02.jpg">
+        <img data-src="images/db03.jpg">
+        <img data-src="images/db04.jpg">
+        <img data-src="images/db05.jpg">
+        <img data-src="images/db06.jpg">
+        <img data-src="images/db07.jpg">
+        <img data-src="images/db08.jpg">
+        <img data-src="images/db09.jpg">
+        <img data-src="images/db10.jpg">
+        <img data-src="images/db01.jpg">
+        <img data-src="images/db02.jpg">
+        <img data-src="images/db03.jpg">
+        <img data-src="images/db04.jpg">
+        <img data-src="images/db05.jpg">
+        <img data-src="images/db06.jpg">
+        <img data-src="images/db07.jpg">
+        <img data-src="images/db08.jpg">
+        <img data-src="images/db09.jpg">
+        <img data-src="images/db10.jpg">
+        <img data-src="images/db01.jpg">
+        <img data-src="images/db02.jpg">
+        <img data-src="images/db03.jpg">
+        <img data-src="images/db04.jpg">
+        <img data-src="images/db05.jpg">
+        <img data-src="images/db06.jpg">
+        <img data-src="images/db07.jpg">
+        <img data-src="images/db08.jpg">
+        <img data-src="images/db09.jpg">
+        <img data-src="images/db10.jpg">
+        <img data-src="images/db01.jpg">
+        <img data-src="images/db02.jpg">
+        <img data-src="images/db03.jpg">
+        <img data-src="images/db04.jpg">
+        <img data-src="images/db05.jpg">
+        <img data-src="images/db06.jpg">
+        <img data-src="images/db07.jpg">
+        <img data-src="images/db08.jpg">
+        <img data-src="images/db09.jpg">
+        <img data-src="images/db10.jpg">
+    </div>
+
+    <script>
+        (function() {
+            // 获取所有的图片
+            var imgItems = document.querySelectorAll('.wrapper img');
+
+            // 加载图片
+            loadImage();
+
+            // 当页面滚动的时候
+            window.onscroll = loadImage;
+
+            // 加载图片的函数
+            function loadImage() {
+                // 遍历所有的图片
+                imgItems.forEach(function(imgItem) {
+                    // 判断当前图片与视口顶部距离是否 小于 视口高度
+                    if (imgItem.getBoundingClientRect().top < document.documentElement.clientHeight) {
+                        // 设置图片的src属性
+                        imgItem.src = imgItem.dataset.src;
+                        // 设置显示
+                        imgItem.style.opacity = 1;
+                    }
+                })
+            }
+        })();
+    </script>
+</body>
+</html>

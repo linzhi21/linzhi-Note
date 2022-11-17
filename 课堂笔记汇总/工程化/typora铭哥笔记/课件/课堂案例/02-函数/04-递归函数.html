@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 定义函数   --- 死递归
+        // function fn() {
+        //     console.log('hello fn');
+        //     fn();
+        // }
+        // // 调用
+        // fn();
+
+
+        // 递归 
+        function fn(n) {
+            console.log(n);
+            if (n > 0) {
+                fn(n - 1);
+            }
+        }
+        fn(3);
+        //fn(89);
+        /*
+          fn(3)  输出3
+            fn(2)  输出2
+                fn(1) 输出 1
+                    fn(0)  输出 0
+        */
+       console.log('');
+
+
+
+       // 定义函数，计算阶乘
+       function func(n) {
+           if (n <= 2) {
+               return n;
+           }
+           return n * func(n-1)
+       }
+
+       console.log('5的阶乘：', func(5));
+       console.log('15的阶乘：', func(15));
+       console.log('3的阶乘：', func(3));
+       console.log('2的阶乘：', func(2));
+       console.log('4的阶乘：', func(4));
+
+       /**
+            func(4) 开始调用  4 * func(3)
+                func(3) 开始调用  3 * func(2)
+                    func(2) 开始调用
+                    func(2) 结束调用 return 2
+                func(3) 结束调用 6
+            func(4) 结束调用 return 24
+       */
+       console.log('');
+
+
+       function demo(n) {
+           console.log(n);
+           if (n > 0) {
+               demo(n - 1);
+           }
+           console.log(n);
+       }
+       demo(3);
+
+       /*
+        demo(3) 开始调用 输出 3
+            demo(2) 开始调用  输出 2
+                demo(1) 开始调用 输出 1
+                    demo(0) 开始调用  输出 0
+                    demo(0) 结束调用  输出 0    
+                demo(1) 调用结束 输出 1
+            demo(2) 调用结束  输出 2
+        demo(3) 结束调用 输出 3
+       
+       
+       */
+
+    </script>
+</body>
+</html>

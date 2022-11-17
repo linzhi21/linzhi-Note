@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 声明数组
+        var arr = [100,200,'高小乐', true, null, undefined, ['aaa', 'bbb', 'ccc']];
+        // 给数组添加属性
+        arr.username = 'Tom';
+        arr.age = 100;
+
+
+        // 循环结构 用循环标记变量作为索引，从 0 开始 到 length-1
+        for (var i = 0; i < arr.length; i ++) {
+            console.log(arr[i], i);
+        }
+        console.log('');
+
+
+        // 使用 for in
+        for (var i in arr) {
+            console.log(arr[i], i);
+        }
+
+    </script>
+</body>
+</html>

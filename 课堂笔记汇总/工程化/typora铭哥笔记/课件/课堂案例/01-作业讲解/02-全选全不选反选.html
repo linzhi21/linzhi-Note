@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul {
+            list-style: none;
+            padding-left: 0;
+        }
+    </style>
+</head>
+<body>
+    <ul id="selectedBox">
+        <li>
+            <input type="checkbox">
+            专动爻人好春何事王意韩姑是人念，治韩圣。
+        </li>
+        <li>
+            <input type="checkbox">
+            专动爻人好春何事王意韩姑是人念，治韩圣。
+        </li>
+        <li>
+            <input type="checkbox">
+            专动爻人好春何事王意韩姑是人念，治韩圣。
+        </li>
+        <li>
+            <input type="checkbox">
+            专动爻人好春何事王意韩姑是人念，治韩圣。
+        </li>
+        <li>
+            <input type="checkbox">
+            专动爻人好春何事王意韩姑是人念，治韩圣。
+        </li>
+        <li>
+            <input type="checkbox">
+            专动爻人好春何事王意韩姑是人念，治韩圣。
+        </li>
+    </ul>
+
+    <hr>
+    <button id="selectAllBtn">全选</button>
+    <button id="selectNotAllBtn">全不选</button>
+    <button id="selectReverseBtn">反选</button>
+
+    <script>
+        (function() {
+            // 获取相关元素
+            // 获取复选框组成的集合
+            var checkboxs = document.querySelectorAll('#selectedBox input');
+            // 获取按钮元素
+            var selectAllBtn = document.querySelector('#selectAllBtn');
+            var selectNotAllBtn = document.querySelector('#selectNotAllBtn');
+            var selectReverseBtn = document.querySelector('#selectReverseBtn');
+            
+
+            // 点击全选
+            selectAllBtn.onclick = function() {
+                // 遍历所有的复选框元素
+                // for (var i = 0; i < checkboxs.length; i ++) {
+                //     checkboxs[i].checked = true;
+                // }
+                checkboxs.forEach(function(item) {
+                    item.checked = true;
+                });
+            };
+
+            // 点击全不选
+            selectNotAllBtn.onclick = function() {
+                // 遍历所有的复选框
+                checkboxs.forEach(function(checkbox) {
+                    checkbox.checked = false;
+                });
+            };
+
+
+            // 点击反选
+            selectReverseBtn.onclick = function() {
+                // 遍历所有的复选框
+                checkboxs.forEach(function(checkbox) {
+                    // if (checkbox.checked) {
+                    //     checkbox.checked = false;
+                    // } else {
+                    //     checkbox.checked = true;
+                    // }
+                    checkbox.checked = !checkbox.checked;
+                })
+            };
+        })();
+    </script>
+</body>
+</html>

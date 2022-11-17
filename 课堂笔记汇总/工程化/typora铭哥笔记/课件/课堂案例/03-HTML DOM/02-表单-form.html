@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="1.php">
+        <input type="text" placeholder="请输入用户名">
+    </form>
+
+    <button>提交</button>
+
+
+
+    <script>
+        // 获取表单元素
+        var formBox = document.querySelector('form');
+
+        // 5s 之后提交表单
+        setTimeout(function() {
+            // formBox.submit();
+        }, 5000);
+
+
+        // 每隔3s重置表单
+        setInterval(function() {
+            formBox.reset();
+        }, 3000);
+    </script>
+</body>
+</html>

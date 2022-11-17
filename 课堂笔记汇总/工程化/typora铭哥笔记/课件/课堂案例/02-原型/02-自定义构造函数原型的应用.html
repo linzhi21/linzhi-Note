@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 自定义构造函数
+        function User(name, address) {
+            // 设置属性 属性设置到对象本身上
+            this.name = name;
+            this.address = address;
+        }
+
+        // 在User实例的原型上设置方法
+        User.prototype.addShopcart = function(product) {
+            console.log(this.name + '将' + product + '加入购物车');
+        };
+
+        User.prototype.buy = function(product) {
+            console.log(this.name + '购买了'+ product + ', 收货地址' + this.address);
+        }
+
+
+
+        // 实例化
+        var u1 = new User('高小乐', '上海');
+        var u2 = new User('低大悲', '北京');
+
+        console.log(u1);
+        console.log(u2);
+        console.log('');
+
+        u1.addShopcart('灭火器');
+        u1.buy('灭火器');
+        console.log('');
+
+        u2.addShopcart('保温杯');
+        u2.buy('保温杯');
+    </script>
+</body>
+</html>

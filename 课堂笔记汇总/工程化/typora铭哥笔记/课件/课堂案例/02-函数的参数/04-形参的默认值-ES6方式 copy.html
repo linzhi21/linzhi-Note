@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 设置参数默认值 ES6 方式
+        function func(name,age=100,address) {
+            console.log('姓名：', name);
+            console.log('年龄：', age);
+            console.log('地址：', address);
+            console.log('');
+        }
+
+
+        func('高小乐', 19, '北京');
+        func('高老乐', 79);
+        func('高大乐');
+        // func('高老乐', '深圳');
+
+       
+    </script>
+</body>
+</html>

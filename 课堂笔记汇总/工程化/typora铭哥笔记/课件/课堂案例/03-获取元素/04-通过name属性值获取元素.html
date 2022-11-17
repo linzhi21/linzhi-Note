@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        p {
+            width: 400px;
+            padding: 20px;
+            background: #ccc;
+        }
+        .wrapper {
+            padding: 20px;
+            width: 600px;
+            border: 2px dashed #999;
+        }
+    </style>
+</head>
+<body>
+    <h1 name="xiaole">通过name属性值获取元素</h1>
+    <hr>
+    <div class="wrapper" id="wrapperBox" name="xiaole">
+        <p>反揽高韩后作整章冒韩远方憾派事读说笔然。</p>
+        <p name="xiaole">反揽高韩后作整章冒韩远方憾派事读说笔然。</p>
+        <p name="laole">反揽高韩后作整章冒韩远方憾派事读说笔然。</p>
+        <div>不陀德们只将俭法是己极大，自师十吞沾也。</div>
+        <p>反揽高韩后作整章冒韩远方憾派事读说笔然。</p>
+    </div>
+    <p>洞情评生非搏后挟我没不，苟尤自投司洪使。</p>
+    <p name="xiaole">洞情评生非搏后挟我没不，苟尤自投司洪使。</p>
+
+    <script>
+        // 获取到name属性值是 xiaole 的元素
+        var items = document.getElementsByName('xiaole');
+        console.log(items);
+        console.log(items[2]);
+        console.log('');
+
+
+        var items02 = document.getElementsByName('dale');
+        console.log(items02);
+
+    </script>
+</body>
+</html>

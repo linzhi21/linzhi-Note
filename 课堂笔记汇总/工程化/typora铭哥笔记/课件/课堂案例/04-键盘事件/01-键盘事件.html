@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>键盘事件</h1>
+    <hr>
+
+
+    <script>
+        // 监听键盘按键按下
+        document.onkeydown = function(event) {
+            console.log('键盘按键按下了！', event.keyCode);
+        };
+
+        // 监听键盘按键抬起
+        document.onkeyup = function(event) {
+            console.log('键盘按键抬起了！', event.keyCode);
+        };
+
+
+        // keypress 键盘按下 高级事件
+        document.onkeypress = function(event) {
+            console.log('键盘按键按下，keypress ', event.keyCode);
+        };
+    </script>
+</body>
+</html>

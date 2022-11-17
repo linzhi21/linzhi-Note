@@ -1,0 +1,89 @@
+
+
+
+	分页整体思路分析：
+	
+	
+	1. 先绘制分页整体结构
+	
+	
+	2. 因为分页需要多个组件中进行使用，所以需要将分页组件注册为全局组件
+	
+	
+	3. 准备一些假数据，先行实现分页整体效果
+	
+		total:
+		pageSize: 
+		pageNo: 
+		continues: 
+		
+		
+		<Pagination :total="103" :pageSize="10" :pageNo="5" :continues="5" />
+		
+		在分页组件中通过 props 接收假数据
+		
+		先计算一个数据：总页码 = Math.ceil(total / pageSize)
+		
+		
+	4. 先计算连续页面开始页码[首] 和 结束页码[尾] 
+	
+		<Pagination :total="103" :pageSize="10" :pageNo="5" :continues="5" />
+	
+		① 连续页码正常的情况   pageNo=5 continues=5  [3] 4 5 6 [7]
+		
+			开始页码: start = pageNo - (continues - 1) / 2
+			
+			结束页码: end = pageNo + (continues - 1) / 2
+			
+			
+		
+		<Pagination :total="103" :pageSize="30 :pageNo="2" :continues="5" />
+		
+		② 特殊情况 1：  continues >  总页码			totalPage=4 pageNo=2  continues=5 1 2 3 4 5
+		
+		
+			开始页码: start = 1
+			
+			结束页码: end = totalPage
+			
+			
+		<Pagination :total="103" :pageSize="10" :pageNo="2" :continues="5" />
+		
+		③ 特殊情况 2：  start < 1 	totalPage=11 pageNo=2 continues=5    0 1 2 3 4  , 1 2 3 4 5
+		
+		
+			开始页码: start = 1
+			
+			结束页码: end = continues
+			
+		
+		<Pagination :total="103" :pageSize="10" :pageNo="10" :continues="5" />
+		
+		④ 特殊情况 4： end > totalPage  totalPage=11   pageNo=10   continues=5  8 9 10 11 12, 7 8 9 10 11
+		
+		
+			开始页码: start = totalPage - continues + 1
+			
+			结束页码: end = totalPage
+			
+			
+			
+	5. 计算出连续页面的页码
+	
+		根据 continues 决定需要渲染几个按钮， 如何把  5 计算出来
+		
+		(item, index) in  end - start + 1  决定了遍历 5 次
+		
+		start + index 决定了 页码
+		
+		
+	6. 绘制分页整体的区域
+	
+		先决定 上一页 和 下一页是否禁用
+		
+		处理 1 和 总条数，是否是由连续页面产生的
+		
+		... 三个点，处理方式：最便捷方式：start > 2  end > 2   前 ... 后
+		
+		
+	7. 处理分页的交互

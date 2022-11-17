@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box {
+            padding: 100px;
+            width: 400px;
+            height: 200px;
+            background: #f00;
+        }
+        #content {
+            padding: 20px;
+            width: 300px;
+            height: 100px;
+            color: #fff;
+            background: #099;
+        }
+    </style>
+</head>
+<body>
+    <h1>MouseEvent</h1>
+    <div id="box">
+        <div id="content"></div>
+    </div>
+
+    <div style="height: 1000px;"></div>
+
+    <script>
+        // 获取元素
+        var box = document.querySelector('#box');
+        var contentBox = document.querySelector('#content');
+
+        // 监听鼠标移动事件
+        box.onmousemove = function(event) {
+            contentBox.innerHTML = 'client（视口）：' + event.clientX + ',' + event.clientY + '<br>';
+            contentBox.innerHTML += 'page（页面）：' + event.pageX + ',' + event.pageY + '<br>';
+            contentBox.innerHTML += 'screen（屏幕）：' + event.screenX + ',' + event.screenY + '<br>';
+            contentBox.innerHTML += 'offset（目标元素）：' + event.offsetX + ',' + event.offsetY + '<br>';
+        }
+
+        // 监听鼠标按键按下事件
+        box.onmousedown = function(event) {
+            console.log(event.button);
+        }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" placeholder="请输入姓名" id="box01"> <br>
+    <input type="email" placeholder="请输入邮箱" id="box02"> <br>
+    <textarea placeholder="请输入自我介绍" cols="30" rows="10" id="box03"></textarea>
+
+    <script>
+        // 获取元素
+        var box01 = document.querySelector('#box01');
+        var box02 = document.querySelector('#box02');
+        var box03 = document.querySelector('#box03');
+    
+        // 点击文档
+        document.onclick = function() {
+            // box01.focus();
+            // box02.focus();
+            // box03.focus();
+        }
+
+        setTimeout(function() {
+            //box03.blur();
+        }, 5000);
+
+
+        box01.onmouseenter = function() {
+            box01.select();
+        }
+    </script>
+</body>
+
+</html>

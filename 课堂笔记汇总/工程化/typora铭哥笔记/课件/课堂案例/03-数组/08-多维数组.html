@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 创建多维数组
+        var cityList = [
+            ['广州', '深圳', '佛山', '东莞', '惠州'],
+            ['南京', '苏州', '徐州', '无锡', '南通'],
+            ['济南', '青岛', '烟台', '潍坊', '淄博'],
+            ['杭州', '宁波', '温州', '绍兴', '湖州']
+        ];
+
+        console.log(cityList[2]);
+        console.log(cityList[2][3]);
+        console.log('');
+
+
+
+        for (var i = 0; i < cityList.length; i ++) {
+            for (var j = 0; j < cityList[i].length; j ++) {
+                console.log(cityList[i][j]);
+            }
+            console.log('');
+        }
+
+    </script>
+</body>
+</html>

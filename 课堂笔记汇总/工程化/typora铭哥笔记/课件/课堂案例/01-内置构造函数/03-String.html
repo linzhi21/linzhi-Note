@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 创建字符串
+        var str = 'Hello,高小乐,小可爱';
+
+        // indexOf() lastIndexOf()  返回某个关键字第一次或最后一次出现的位置
+        console.log(str.indexOf('小'));
+        console.log(str.lastIndexOf('小'));
+        console.log(str.indexOf('hello'));
+        console.log(str.indexOf('atguigu'));
+        console.log('');
+
+
+        // 截取字符串
+        console.log(str.slice(2));
+        console.log(str.slice(2, 6));   // 顾头不顾尾
+        console.log(str.substring(2));
+        console.log(str.substring(2, 6));
+        console.log(str.substr(2));
+        console.log(str.substr(2, 6));
+        console.log('');
+
+        // split 将字符串分割为数组
+        console.log(str.split());
+        console.log(str.split(','));
+        console.log(str.split(''));
+        console.log('');
+
+
+        // 大小写转换
+        console.log(str.toUpperCase());
+        console.log(str.toLowerCase());
+        console.log('');
+
+
+        // 根据位置返回对应的字符
+        console.log(str.charAt(3));
+        console.log(str[3]);
+        
+        // 根据位置返回对应字符的UNICODE编码
+        console.log(str.charCodeAt(3));
+        console.log(str.charCodeAt(7));
+        console.log('乐'.charCodeAt(0));
+        console.log('');
+
+        // 根据unicode编码得到字符
+        console.log(String.fromCharCode(65));
+        console.log(String.fromCharCode(23567));
+        console.log('');
+
+        console.log(str.length);
+
+    </script>
+</body>
+</html>

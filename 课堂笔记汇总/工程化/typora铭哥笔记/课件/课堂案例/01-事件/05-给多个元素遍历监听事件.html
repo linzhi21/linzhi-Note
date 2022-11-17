@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #news {
+            list-style: none;
+            padding: 0;
+            width: 600px;
+        }
+        #news li {
+            margin: 20px 0;
+            padding: 20px;
+            border: 1px solid #999;
+        }
+        #news li.active {
+            border-color: #f00;
+        }
+    </style>
+</head>
+<body>
+    <ul id="news">
+        <li>1 井恩只洪支拆创之单人谢今内使。</li>
+        <li>2 井恩只洪支拆创之单人谢今内使。</li>
+        <li>3 井恩只洪支拆创之单人谢今内使。</li>
+        <li>4 井恩只洪支拆创之单人谢今内使。</li>
+        <li>5 井恩只洪支拆创之单人谢今内使。</li>
+        <li>6 井恩只洪支拆创之单人谢今内使。</li>
+    </ul>
+
+    <script>
+        // 获取所有 li 的集合
+        var liItems = document.querySelectorAll('#news li');
+
+        // 给每个 li 元素监听事件， 遍历 li 元素
+        // liItems.forEach(function(liItem) {
+        //     liItem.onclick = function() {
+        //         liItem.classList.toggle('active');
+        //         // this.classList.toggle('active');
+        //     }
+        // });
+
+
+        // 使用 for 循环 给每个 li 元素监听事件， 遍历 li 元素
+        for (var i = 0; i < liItems.length; i ++) {
+            liItems[i].onclick = function() {
+                // liItems[i].classList.toggle('active');
+                // console.log(liItems[i]);
+                // console.log(i);
+                // console.log(this);
+                this.classList.toggle('active');
+            };
+        }
+        console.log('循环结束之后循环标记变量的值：', i);
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box {
+            width: 600px;
+            height: 300px;
+            background: #ccc;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+        <h2>太秦不同宋斯，不太。</h2>
+        <p>君禀资感不光因今，要斯留评负洪回志书入，切丹可子冒到张绝上种预而但长太同，争皇愚着两后日但尘丈慧尤，劫真如着杀大爱由，今她是支太张我清，他派秦尝自志才这看后韩才一元王，先她是一保灰死，后者山，俭德足妙活日从少之制明贤我的身，恩你未攻韩变感，们什子掸也，负。</p>
+    </div>
+
+    <script>
+        // 获取元素
+        var box = document.querySelector('#box');
+
+        // 监听鼠标进入的事件
+        box.onmouseenter = function() {
+            console.log('鼠标进入了 box 元素！');
+            box.style.background = '#099';
+        };
+
+        // 监听鼠标离开的事件
+        box.onmouseleave = function() {
+            console.log('鼠标离开了 box 元素！');
+            box.style.background = '#ccc';
+        };
+    </script>
+</body>
+</html>

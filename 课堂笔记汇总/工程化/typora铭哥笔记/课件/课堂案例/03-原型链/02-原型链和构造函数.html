@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function User() {}
+
+        Array.prototype;     // Array的实例的原型， 是Object的实例
+        Function.prototype;  // Function 的实例的原型， 是Object的实例
+        Number.prototype;    // Number 的实例的原型 ， 是Object的实例
+        User.prototype;      // User 的实例的原型， 是Object的实例
+        console.log('');
+
+
+        var arr = [];
+
+        // arr 的构造函数是 Array  
+        // Array 的构造函数是 Function
+
+
+        // Function 的构造函数 是 Function
+
+        console.log(Array.__proto__ === Array.prototype);
+        console.log(Object.__proto__ === Object.prototype);
+        console.log(Function.__proto__ === Function.prototype);
+        
+    </script>
+</body>
+</html>

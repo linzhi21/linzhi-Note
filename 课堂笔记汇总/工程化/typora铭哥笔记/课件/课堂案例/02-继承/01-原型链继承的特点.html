@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // instanceof  实例 instanceof 构造函数
+        // arr -> Array.prototype -> Object.prototype
+        var arr = [10,20,30,40];
+        console.log(arr instanceof Array);      // true
+        console.log(arr instanceof Object);     // true
+        console.log(arr instanceof Function);   // false
+        console.log('');
+
+
+        function Foo() {};
+        // f -> Foo.prototype -> Object.protytpe
+        var f = new Foo();
+        console.log(f instanceof Foo);      // true
+        console.log(f instanceof Object);   // true
+        console.log(f instanceof Function); // false
+        console.log('');
+
+        // Array -> Funciton.protoypte -> Object.prototype
+        console.log(Array instanceof Function);     // true
+        console.log(Array instanceof Object);       // true
+        console.log('');
+
+        console.log(Foo instanceof Function);       // true
+        console.log(Foo instanceof Object);         // true
+        console.log(Foo instanceof Foo);            // false
+        console.log('');
+
+        // Function -> Function.prototypoe -> Object.prototype
+        console.log(Function instanceof Function);  // true
+        console.log(Function instanceof Object);  // true
+    </script>
+</body>
+</html>

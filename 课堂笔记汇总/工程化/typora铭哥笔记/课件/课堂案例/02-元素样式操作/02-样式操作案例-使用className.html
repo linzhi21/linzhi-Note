@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .wrapper {
+            width: 800px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        .item {
+            margin: 20px 0;
+            box-sizing: border-box;
+            width: 220px;
+            padding: 20px;
+            border: 1px solid #ccc;
+        }
+        .item.active {
+            color: #fff;
+            border: 3px solid #f00;
+            background-color: #099;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="item">高小乐</div>
+        <div class="item">高小乐</div>
+        <div class="item">高小乐</div>
+        <div class="item">高小乐</div>
+        <div class="item">高小乐</div>
+        <div class="item">高小乐</div>
+        <div class="item">高小乐</div>
+        <div class="item">高小乐</div>
+        <div class="item">高小乐</div>
+        <div class="item">高小乐</div>
+        <div class="item">高小乐</div>
+        <div class="item">高小乐</div>
+    </div>
+
+    <script>
+        // 获取到所有的 item 元素
+        var itemList = document.querySelectorAll('.wrapper .item');
+
+        // 遍历 itemList，给每个元素监听事件
+        itemList.forEach(function(item) {
+            item.onclick = function() {
+                // 判断当前是否选中
+                if (item.className === 'item') {
+                    item.className = 'item active';
+                } else {
+                    item.className = 'item';
+                }
+            }
+        });
+    </script>
+</body>
+</html>

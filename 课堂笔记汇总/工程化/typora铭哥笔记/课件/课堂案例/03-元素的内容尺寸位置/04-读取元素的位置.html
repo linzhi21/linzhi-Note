@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .wrapper {
+            /* position: relative; */
+            margin: 200px auto;
+            width: 800px;
+            border: 1px solid red;
+        }
+        .box {
+            margin: 100px;
+            width: 200px;
+            height: 200px;
+            background: #099;
+            border: 2px solid #990;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="box"></div>
+    </div>
+
+    <script>
+        // 获取元素
+        var box = document.querySelector('.box');
+
+        console.log('offset：', box.offsetLeft, box.offsetTop);
+        console.log('client：', box.clientLeft, box.clientTop);
+        console.log('');
+
+        var rect = box.getBoundingClientRect();
+        console.log('在视口上的位置：', rect.left, rect.top);
+        console.log('right和bottom：', rect.right, rect.bottom);
+        console.log(rect.right -rect.left);
+        console.log(rect.bottom -rect.top);
+    </script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        p {
+            width: 400px;
+            padding: 20px;
+            background: #ccc;
+        }
+        .wrapper {
+            padding: 20px;
+            width: 600px;
+            border: 2px dashed #999;
+        }
+    </style>
+</head>
+<body>
+    <h1>通过类名获取元素</h1>
+    <hr class="item">
+    <div class="wrapper" id="wrapperBox">
+        <p>反揽高韩后作整章冒韩远方憾派事读说笔然。</p>
+        <p class="item">反揽高韩后作整章冒韩远方憾派事读说笔然。</p>
+        <p>反揽高韩后作整章冒韩远方憾派事读说笔然。</p>
+        <div>不陀德们只将俭法是己极大，自师十吞沾也。</div>
+        <p class="item">反揽高韩后作整章冒韩远方憾派事读说笔然。</p>
+    </div>
+    <p class="item">洞情评生非搏后挟我没不，苟尤自投司洪使。</p>
+    <p>洞情评生非搏后挟我没不，苟尤自投司洪使。</p>
+
+    <script>
+        // 获取到类名是 item 的元素
+        var items = document.getElementsByClassName('item');
+        console.log(items);
+
+        // 从元素的后代中获取
+        var wrapperBox = document.getElementById('wrapperBox');
+        var items02 = wrapperBox.getElementsByClassName('item');
+        console.log(items02);
+    </script>
+</body>
+</html>

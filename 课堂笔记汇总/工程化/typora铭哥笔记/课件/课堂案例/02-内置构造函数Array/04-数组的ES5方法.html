@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=s, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 创建数组
+        var users = [
+            {name:'曹操', age: 41, address: '上海', height: 175},
+            {name:'曹丕', age: 20, address: '上海', height: 170},
+            {name:'曹植', age: 19, address: '上海', height: 172},
+            {name:'曹冲', age: 12, address: '上海', height: 140},
+            {name:'吕布', age: 38, address: '深圳', height: 195}
+        ];
+
+
+        // forEach
+        var res = users.forEach(function(item, index) {
+            console.log(item, index);
+        });
+        console.log(res);
+        console.log('');
+
+
+        // filter 过滤   只有20岁以上的
+        var filterUsers = users.filter(function(item, index) {
+            return item.age >= 20;
+        });    
+        console.log(filterUsers);
+        console.log('');
+
+        
+
+
+        // map   得到一个类似数组，所有用户年龄+1
+        var mapUsers = users.map(function(item,index) {
+            // return item.age;
+            // return item.name;
+            // return item.age ++;
+            return item;
+        });
+        console.log(mapUsers);
+        console.log('');
+
+
+
+        // every 判断是否全都是成年人
+        var res01 = users.every(function(item, index) {
+            return item.age >= 18;
+        });
+        console.log(res01);
+        console.log('');
+
+        // some 判断是否包含身高180以上的
+        var res02 = users.some(function(item, index) {
+           return item.height >= 180;
+        });
+        console.log(res02);
+        console.log('');
+
+
+
+        // reduce()  计算所有用户的年龄和
+        var ageSum = users.reduce(function(prev, curr, index) {
+            return prev + curr.age;
+        }, 0);
+        console.log(ageSum);
+        console.log('');
+        console.log('');
+
+
+
+        // 定义数组
+        var nums = [100,200,300,400,500,600];
+        console.log(nums.indexOf(200));
+        console.log(nums.lastIndexOf(200));
+        console.log(nums.lastIndexOf(20000));
+
+
+
+    </script>
+</body>
+</html>

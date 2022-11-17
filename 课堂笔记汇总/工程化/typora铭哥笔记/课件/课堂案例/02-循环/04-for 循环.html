@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 循环输出 10 次 高小乐，你妈让你穿秋裤了！ ---------------
+        for (var tag = 0; tag < 10; tag ++) {
+            console.log('高小乐，你妈让你穿秋裤了！', tag);
+        }
+        console.log('循环结束后循环标记变量的值：', tag);
+        console.log('');
+
+
+        // 循环输出 3 ~ 8  -------------------------------------
+        for (var i = 3; i <= 8; i ++) {
+            console.log(i);
+        }
+        console.log('循环结束后循环标记变量的值：', i);
+        console.log('');
+       
+        
+        // 循环输出 25 ~ 19 -------------------------------------------
+        for (var i = 25; i >= 19; i --) {
+            console.log(i);
+        }
+        console.log('循环结束后循环标记变量的值：', i);
+        console.log('');
+        
+        // 循环输出 0~10 之间所有的偶数 (嵌套单向分支)------------------------------------
+        for (var i = 0; i <= 10; i ++) {
+            if (i % 2 === 0) {
+                console.log(i);
+            }
+        }
+        console.log('循环结束后循环标记变量的值：', i);
+        console.log('');
+        
+        // 循环输出 0~10 之间所有的奇数 (自增2)------------------------------------
+        for (var i = 1; i < 10; i += 2) {
+            console.log(i);
+        }
+        console.log('循环结束后循环标记变量的值：', i);
+        console.log('');
+        
+        // 计算 1 到 100 所有数字的和  -------------------------------------
+        var sum = 0; // 记录和
+        for (var i = 1; i <= 100; i ++) {
+            sum += i;
+        }
+        console.log('1 到 100 之间所有数字的和：', sum);
+        console.log('');
+       
+       
+        // 计算 1 ~ 10 之间所有偶数的积  ------------------------------------
+        var res = 1;   // 记录乘积
+        for (var i = 2; i <= 10; i += 2) {
+            res *= i;
+        }
+        console.log('1 到 10 之间所有偶数的乘积：', res);
+    
+    </script>
+</body>
+</html>

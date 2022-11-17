@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 转换函数 Number()
+        // string -> number
+        console.log(Number('hello'));     // NaN
+        console.log(Number('13.34'));     
+        console.log(Number('100abc'));    // NaN
+        console.log(Number('0xab'));      // 171     
+        console.log(Number('1.2e4'));     // 1200
+        console.log(Number(''));          // 0
+        
+        console.log(Number('    '));      // 0
+        console.log(Number('  178  '));   // 178
+        console.log(Number('  17 8  '));  // NaN 
+        console.log('');
+        console.log('');
+
+
+
+        // boolean -> number
+        console.log(Number(true));      // 1
+        console.log(Number(false));     // 0
+        console.log('');
+        console.log('');
+
+
+
+        // undefiend -> number
+        console.log(Number(undefined));  // NaN
+        console.log('');
+        console.log('');
+
+
+
+        // null -> number
+        console.log(Number(null));        // 0
+
+
+
+
+    </script>
+</body>
+</html>

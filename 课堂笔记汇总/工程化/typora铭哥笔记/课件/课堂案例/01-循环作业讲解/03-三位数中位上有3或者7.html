@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // var num = 298;
+
+        // // 取出百位上的数字
+        // var n1 = parseInt(num / 100);
+        // // 取出十位上的数字
+        // var n2 = parseInt(num%100/10);
+        // // 取出个位上的数字
+        // var n3 = num%10
+
+        
+        // 循环所有的三位数 100 ~ 999
+        for (var num = 100; num <= 999; num ++) {
+            // 取出百位上的数字
+            var n1 = parseInt(num / 100);
+            // 取出十位上的数字
+            var n2 = parseInt(num%100/10);
+            // 取出个位上的数字
+            var n3 = num%10;
+
+            // 判断
+            if(n1 === 3 || n1 === 7 || n2 === 3 || n2 === 7 || n3 === 3 || n3 === 7){
+                console.log(num);
+            }
+        }
+    </script>
+</body>
+</html>

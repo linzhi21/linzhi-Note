@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var arr = [100,200,300];
+        arr.username = '高小乐';
+        console.log(arr);
+
+        // 使用 in 运算符
+        console.log('username' in arr);
+        console.log('length' in arr);
+        console.log('push' in arr);   // true
+        console.log('constructor' in arr);   // true
+        console.log('age' in arr);   // false
+        console.log('');
+
+
+        // 判断属性是否是对象自身的属性
+        console.log(arr.hasOwnProperty('username'));
+        console.log(arr.hasOwnProperty('length'));
+        console.log(arr.hasOwnProperty('push'));
+        console.log(arr.hasOwnProperty('constructor'));
+        console.log(arr.hasOwnProperty('age'));
+        
+    </script>
+</body>
+</html>

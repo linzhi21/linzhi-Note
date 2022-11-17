@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>无缝滚动</title>
+    <style>
+        .scroll-box {
+            margin: 100px auto;
+            width: 800px;
+            height: 200px;
+            /* border: 2px solid #f00; */
+            display: flex;
+            overflow: hidden;
+        }
+        .scroll-box img {
+            flex: 0 0 auto;
+            width: 200px;
+            height: 200px;
+        }
+    </style>
+</head>
+<body>
+    <div class="scroll-box" id="scrollBox">
+        <img src="images/db01.jpg" alt="db">
+        <img src="images/db02.jpg" alt="db">
+        <img src="images/db03.jpg" alt="db">
+        <img src="images/db04.jpg" alt="db">
+        <img src="images/db05.jpg" alt="db">
+        <img src="images/db06.jpg" alt="db">
+        <img src="images/db07.jpg" alt="db">
+        <img src="images/db08.jpg" alt="db">
+        <img src="images/db09.jpg" alt="db">
+        <img src="images/db10.jpg" alt="db">
+    </div>
+
+    <script>
+        (function() {
+            // 定义事件间隔
+            var duration = 10;
+
+            // 获取到包裹元素
+            var scrollBox = document.querySelector('#scrollBox');
+            
+            // 计算一组图片的总宽度
+            var maxWidth = scrollBox.firstElementChild.offsetWidth * scrollBox.children.length;
+
+            // 将所有的图片复制一份
+            scrollBox.innerHTML += scrollBox.innerHTML;
+            
+
+            // 开启定时器
+            var intervaId = setInterval(scrollRun, duration);
+
+
+            // 监听鼠标进入的事件
+            scrollBox.onmouseenter = function() {
+                // 停止定时器
+                clearInterval(intervaId);
+            };
+
+            // 监听鼠标离开元素
+            scrollBox.onmouseleave = function() {
+                // 重新开启定时器
+                intervaId = setInterval(scrollRun, duration);
+            }
+
+
+            // 定时器回调函数
+            function scrollRun() {
+                // 判断到达临界位置
+                if (scrollBox.scrollLeft >= maxWidth) {
+                    scrollBox.scrollLeft = 0;
+                }
+                scrollBox.scrollLeft += 2;
+            }
+        })();
+    </script>
+</body>
+</html>

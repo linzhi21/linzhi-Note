@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 遍历所有的三位数
+        for (var num = 100; num <= 999; num ++) {
+            // 分别取出 num 上百位、十位、个位
+            var n1 = parseInt(num / 100);
+            var n2 = parseInt(num % 100 / 10);
+            var n3 = num % 10;
+
+            // 判断是否是水仙花数
+            if (n1*n1*n1 + n2*n2*n2 + n3*n3*n3 === num) {
+                console.log(num);
+            }
+        }
+
+    </script>
+</body>
+</html>

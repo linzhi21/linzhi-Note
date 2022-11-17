@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 整型
+        var num01 = 987;        // 十进制表示方式
+        var num02 = 010;        // 八进制表示方式 0 1 2 3 4 5 6 7 10 11
+        var num03 = 0x10;       // 十六进制表示方式  0 1 2 3 4 5 6 7 9 a b c d e f 10
+
+        console.log(num01);     // 987
+        console.log(num02);     // 8
+        console.log(num03);     // 16
+        console.log('');
+
+
+
+
+        // 浮点 浮点数存在计算精度问题
+        var num04 = 89.76;
+        console.log(num04);
+        console.log(1 + 2);
+        console.log(.1 + .2);       // 0.30000000000000004
+        console.log('');
+
+
+
+        // 科学计算法表示的数字
+        var num05 = 198e2;   // 198 * 10^2
+        var num06 = 1.76e6;  
+        var num07 = 2e-2;    // 2 * 10^-2
+        var num08 = 23092809280928409284024;
+
+        console.log(num05);
+        console.log(num06);
+        console.log(num07);
+        console.log(num08);
+        console.log('');
+
+
+
+        // NaN
+        var num09 = NaN;
+        console.log(num09);
+        console.log(typeof(num09));   // number
+        // NaN 的特点
+        console.log(num09 * 0);
+        console.log(num09 + 100);
+        console.log(NaN == NaN);  // false
+        // isNaN()  判断一个数据是否是NaN
+        console.log(isNaN(num01));   //false
+        console.log(isNaN(num09));   //true
+        console.log(isNaN(NaN));     //true
+        console.log('');
+
+
+
+        // 数字的有效范围
+        console.log('JS中最大的数字：', Number.MAX_VALUE);
+        console.log('JS中最小的正数：', Number.MIN_VALUE);
+        var num10 = 89e400;
+        var num11 = -10e308;
+        var num12 = 8e-500;
+
+        console.log(num10);     // Infinity
+        console.log(num11);     // -Infinity
+        console.log(num12);     // 0
+
+        console.log(isFinite(100.98));      // true
+        console.log(isFinite(num10));          // false
+        console.log(isFinite(num11));           // false
+        console.log(isFinite(num12));        // true
+        console.log(isFinite(NaN));     // false
+        console.log(isFinite(Infinity));     // false
+        console.log(isFinite(-Infinity));     // false
+
+
+
+
+    </script>
+</body>
+</html>

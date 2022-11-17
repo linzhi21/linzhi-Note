@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        console.log(age);
+
+        // 声明变量
+        var age = 100;
+        var num = 10;
+        // 声明变量 不使用var声明，不会提升
+        address = '上海';
+
+        console.log(age);
+        console.log(address);
+        console.log('');
+
+
+        function func() {
+            console.log(username);      // undefined
+            console.log(age);           // undefiend
+            console.log(num);           // 10
+
+            var username = '高小乐';
+            var age = 200;
+            num = 1090;                 // 修改的是全局变量
+
+            console.log(username);      // 高小乐
+            console.log(age);           // 200
+            console.log(num);           // 1090
+        }
+        func();
+
+        console.log('');
+        console.log(age);
+        console.log(num);     // 1090
+
+
+    </script>
+</body>
+</html>

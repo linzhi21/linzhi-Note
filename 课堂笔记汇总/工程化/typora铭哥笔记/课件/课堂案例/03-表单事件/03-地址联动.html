@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        select {
+            width: 160px;
+        }
+    </style>
+</head>
+<body>
+    <h4>请选择地址：</h4>
+    <select id="prov"></select>
+    <select id="city"></select>
+
+    <script>
+        (function() {
+            // 定义相关数据
+            var provData = ['江苏', '浙江', '安徽', '河南', '河北'];
+            var cityData = [
+                ['南京', '苏州', '常州', '徐州', '扬州'],
+                ['杭州', '温州', '台州', '湖州', '衢州'],
+                ['合肥', '安庆', '马鞍山', '亳州', '宿州'],
+                ['郑州', '周口', '洛阳', '开封', '安阳'],
+                ['石家庄', '保定', '唐山', '秦皇岛', '张家口'],
+            ];
+
+            // 获取元素
+            var provSel = document.querySelector('#prov');
+            var citySel = document.querySelector('#city');
+
+            // 添加省的下拉选项
+            provData.forEach(function(item,index) {
+                provSel.add(new Option(item, index));
+            });
+
+            // 给省的拉下选项 监听 change 事件
+            provSel.onchange = function() {
+                // 获取当前所选的选项
+                var index = provSel.value;
+                // 情况城市的下拉选项
+                citySel.options.length = 0;
+                // 取出城市数据，添加到下拉选项
+                cityData[index].forEach(function(item,index) {
+                    citySel.add(new Option(item, index));
+                });
+            };
+
+            // 主动执行 change事件的回调函数
+            provSel.onchange();
+
+        })();
+    </script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>读写设置到标签代码上的属性</h1>
+    <hr>
+    <button id="btn01">获取属性值</button>
+    <button id="btn02">设置属性</button>
+
+    <hr>
+    <img id="box" src="images/小乐.jpg" alt="小乐好可爱" title="可爱的小乐" width="300" loadpic="100.jpg">
+
+    <script>
+        // 获取到所有需要用到的元素
+        var imgBox = document.querySelector('#box');
+        var btn01 = document.querySelector('#btn01');
+        var btn02 = document.querySelector('#btn02');
+        var btn03 = document.querySelector('#btn03');
+
+
+
+        // 点击按钮 获取图片元素的属性值
+        btn01.onclick = function() {
+            console.log('src：', imgBox.getAttribute('src'));
+            console.log('width：', imgBox.getAttribute('width'));
+            console.log('height：', imgBox.getAttribute('height'));
+            console.log('loadpic：', imgBox.getAttribute('loadpic'));
+        };
+
+        // 点击按钮 修改属性
+        btn02.onclick = function() {
+            imgBox.setAttribute('src', 'images/shanghai.jpg');
+            imgBox.setAttribute('loadpic', '高小乐');
+            imgBox.setAttribute('data-name', '低大悲');
+        };
+
+      
+
+    </script>
+</body>
+</html>

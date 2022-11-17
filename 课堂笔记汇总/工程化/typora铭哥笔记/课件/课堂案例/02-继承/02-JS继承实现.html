@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 定义父类 用户类
+        function User(name, age, address) {
+            // 给实例设置属性
+            this.name = name;
+            this.age = age;
+            this.address = address;
+        }
+
+        // 设置方法
+        User.prototype.addShopcart = function(product) {
+            console.log(this.name + '将' + product + '加入购物车！');
+        }
+
+        // 定义子类 普通用户
+        function OrdinaryUser(name, age, address) {
+            // 调用父类
+            User.call(this, name, age, address);
+
+            // 设置普通用户所特有的属性
+            this.usertype = 100;
+        }
+        // 设置普通用户的实例的原型是 User的一个实例
+        OrdinaryUser.prototype = new User();
+        OrdinaryUser.prototype.constructor = OrdinaryUser;
+
+        // 设置普通用户所特有的方法
+        OrdinaryUser.prototype.upgrade = function() {
+            console.log(this.name + '升级了！');
+        }
+
+
+        // 定义子类 VIP用户
+        function VipUser(name, age, address, jifen) {
+            // 调用父类
+            User.call(this, name, age, address);
+            // 设置VIP用户的所特有的属性
+            this.jifen = jifen;
+        }
+        // 设置VIP用户的实例的原型是 User 的一个实例
+        VipUser.prototype = new User();
+        VipUser.prototype.constructor = VipUser;
+
+        // 设置VIP用户所有特有的功能
+        VipUser.prototype.shashu = function() {
+            console.log(this.name + '被杀熟了！');
+        }
+
+
+        // 创建一个普通用户
+        var u1 = new OrdinaryUser('高小乐', 19, '上海');
+        console.log(u1);
+        // console.log(u1 instanceof OrdinaryUser); // true
+        // console.log(u1 instanceof User);        // true
+        // console.log(u1 instanceof Object);        // true
+        u1.addShopcart('坦克');
+        u1.upgrade();
+        console.log('');
+
+        // 再创建一个普通用户
+        var u3 = new OrdinaryUser('低大悲', 18, '北京');
+        console.log(u3);
+        u3.addShopcart('大炮');
+
+
+        console.log('');
+        console.log('');
+        console.log('');
+        // 创建VIP用户
+        var u2 = new VipUser('橘子', 16, '深圳', 10000);
+        console.log(u2);
+        // console.log(u2 instanceof VipUser);
+        // console.log(u2 instanceof User);
+        // console.log(u2 instanceof Object);
+        u2.addShopcart('大炮');
+        u2.shashu();
+
+
+        console.log('');
+        console.log('');
+
+
+        // Array 和 String 都继承了 Object
+        // Array 的实例的原型是一个 Object 的实例
+        // String 的实例的原型是一个 Object 的实例
+        
+        // OrdinaryUser 和 VipUser 都继承了 User
+        // OrdinaryUser 的实例的原型是 User的实例
+        // VipUser 的实例的原型是 User 的实例
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        console.log(Object.prototype);
+        console.log(Object.prototype.toString());
+        console.log('');
+        function Foo(){}
+
+        // 可以准确判断内置的数据类型 
+        console.log(Object.prototype.toString.call([]));
+        console.log(Object.prototype.toString.call(function(){}));
+        console.log(Object.prototype.toString.call(Array));
+        console.log(Object.prototype.toString.call('hello'));
+        console.log(Object.prototype.toString.call(12.23));
+        console.log(Object.prototype.toString.call(new Date()));
+        
+        console.log('');
+        // 以下对象无法准确判断
+        console.log(Object.prototype.toString.call(new Foo()));
+        console.log(Object.prototype.toString.call(Array.prototype));
+        console.log(Object.prototype.toString.call(String.prototype));
+        console.log('');
+
+
+        /***
+         * 判断数据的类型
+         */
+        function getType(data) {
+            var res = Object.prototype.toString.call(data);
+            return res.slice(8, res.length-1);
+        } 
+
+        console.log(getType([]));
+        console.log(getType('hello'));
+        console.log(getType(12));
+        console.log(getType(true));
+    
+    </script>
+</body>
+</html>

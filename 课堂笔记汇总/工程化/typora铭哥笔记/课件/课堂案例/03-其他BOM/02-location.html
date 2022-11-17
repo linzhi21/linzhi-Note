@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>location</h1>
+    <hr>
+    <button id="btn">修改location的属性</button>
+    <br>
+    <br>
+    <button onclick="location.reload()">reload</button>
+    <button onclick="location.replace('http://www.baidu.com')">replace</button>
+    <button onclick="location.assign('http://www.baidu.com')">assign</button>
+    <script>
+        console.log(location);
+        console.log('完整的URL：', location.href);
+        console.log('URL中的协议：', location.protocol);
+        console.log('URL中的主机名和端口号：', location.host);
+        console.log('URL中的主机名：', location.hostname);
+        console.log('URL中的端口号：', location.port);
+        console.log('URL中的路径信息：', location.pathname);
+        console.log('URL中的锚点信息：', location.hash);
+        console.log('URL中的查询字符串：', location.search);
+
+
+        // 获取btn
+        var btn = document.getElementById('btn');
+        btn.onclick = function() {
+            location.hash = '#xiaole';
+            location.search = '?name=xiaole&age=100';
+            // location.href = 'http://www.baidu.com';
+            // location.protocol = 'https:';
+        }
+    </script>
+</body>
+</html>

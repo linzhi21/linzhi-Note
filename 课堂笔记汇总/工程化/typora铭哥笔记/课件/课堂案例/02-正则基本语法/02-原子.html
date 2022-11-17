@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 具体字符的匹配
+        var str = 'hello\nworld';
+        console.log(str.match(/w/));
+        console.log(str.match(/hw/));
+        console.log(str.match(/o w/));
+        console.log(str.match(/o\nw/));
+        console.log(str.match(/\u0068/));
+        console.log('');
+
+        // 字符类
+        console.log('hello'.match(/[hw]/));
+        console.log('world'.match(/[hw]/));
+        console.log('world'.match(/[abcdef]/));
+        console.log('world'.match(/[^abcdef]/));
+        console.log('world'.match(/[a-z]/));
+        console.log('world'.match(/[a-zA-Z0-9_]/));
+        console.log('_world'.match(/[a-zA-Z0-9_]/));
+        console.log('-world'.match(/[^a-zA-Z0-9_]/));
+        console.log('');
+        console.log('hello_world'.match(/\w/)); // [a-zA-Z0-9_]
+        console.log('hello-world'.match(/\W/));
+        console.log('');
+
+        console.log('hello 5 6 wrold'.match(/\d/)); // [0-9]
+        console.log('hello 5 6 wrold'.match(/\D/));
+        console.log('hello 5 6 wrold'.match(/\s/));
+        console.log('hello 5 6 wrold'.match(/\S/));
+        console.log('');
+
+
+        console.log('hello 5 6 wrold'.match(/./));
+        console.log('\n'.match(/./));
+        console.log('#'.match(/./));
+        console.log('高'.match(/./));
+        console.log('');
+
+        console.log('10.8'.match(/\./));
+
+
+
+
+
+    </script>
+</body>
+</html>

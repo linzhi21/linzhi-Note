@@ -1,0 +1,194 @@
+day05
+1、演示spu的整个功能：包含了增删改查 多了两个：1、添加sku 2、查看spu的sku列表
+
+2、spu和sku
+	以后只要是玩电商项目，就离不开spu和sku两个概念
+	理解：spu其实代表是商品sku的一个大类
+	     sku是属于这个spu类的
+	     比如：iPhone13就是一个spu， iphone13 黑色 128G 全网通就是一个sku
+
+3、平台属性和销售属性的概念
+	平台属性 代表让用户在前台进行搜索的一些属性
+	销售属性 代表用户买东西需要选择的属性
+
+4、搭建整体spu的架子
+	一上来两个card，上面的card当中放的是我们之前已经做完的三级联动组件
+	下面的card当中我们需要有三个界面的切换
+
+
+5、定义三个组件在第二个card当中使用
+	定义SpuList代表Spu的列表
+	定义SpuForm代表Spu的添加和修改
+	定义SkuForm代表Sku的添加
+	他们三个同时只能显示一个，所以定义数据去控制条件渲染(vif)  showState
+	1代表显式列表页spu
+  	2代表显式添加和修改页面spu
+  	3代表显式sku的添加页面
+
+6、默认一上来显示的是SpuList  showState = 1
+	搭建SpuList静态界面
+	一个按钮  一个表格  一个分页器
+
+7、搭建完SpuList静态页面之后需要监视category3Id发请求
+	通过categoryStore解构到category3Id进行监视，发请求获取spu列表数据
+	但是此时api还没有，需要书写api
+
+8、书写所有的spu和sku相关的api接口请求函数
+	书写接口莫急莫慌，定义类型的时候注释，后期可能会用到之前定义的类型
+
+9、拿书写好的接口在spu列表组件SpuList当中获取spu列表进行展示
+	第7不已经监视了3级id，我们直接去封装函数发请求获取spu列表数据
+	在table去展示spu列表数据
+
+10、使用自定义事件在spu列表界面，点击三个按钮切换到不同的界面
+	点击添加和修改spu的按钮，切换到spuForm
+	点击添加sku的按钮，切换到skuForm	
+
+11、添加和修改spu的功能
+	1、搭建spuForm的静态组件界面
+	2、点击列表页的添加spu和点击列表页的修改spu，使用的是自定义事件切换到spuForm界面的，之前写过
+	3、spuform界面由于添加过来和修改过来都要去获取初始化展示数据而且添加是需要发两个请求
+	而修改是需要发4个请求，因此我们需要让spuForm页面知道我们是添加过来的还是修改过来的
+	4、列表页点击添加spu的时候,我们触发父组件的自定义事件传递的只有showState值
+	5、列表页点击修改spu的时候，我们触发父组件的自定义事件传递的除了showState值以外还有row
+	6、在父组件当中自定义事件的回调内部，可以根据是否传递row，来判定用户是点击添加还是点击修改
+	7、如果有row的数据，那么代表用户是修改的，我们需要把row的数据传递到spuForm当中
+	8、如果没有row的数据，那么代表用户是添加的，我们需要给spuForm传递添加的初始化数据，和row属性是一样的
+	只是属性值都是初始化的，没有id
+
+
+day06
+
+12、获取添加和修改spu的初始化动态数据
+	跳转到spuForm的时候我们接受props 拿到spuInfo,修改的时候它有id，添加的时候没有id
+	使用一个变量spuForm接收，后期好操作
+	在挂载完成的时候，可以判断spuForm.id，如果是有值的，就请求获取修改的数据，4个请求函数getInitUpdateSpuData
+	如果没有id，就请求获取添加的数据，2个请求函数 getInitAddSpuData
+
+13、初始化动态数据展示
+	展示前三个 v-model直接展示的数据 
+	展示图片列表
+		注意：展示图片列表的时候，图片结构要求必须有name和url，我们本身是没有的，需要整理添加name和url
+	展示spu自己的销售属性在表格当中
+		注意：spu的销售属性本身是一个对象，对象里面又包含了spu销售属性值的列表，展示销售属性值名称列表的时候
+		我们需要用到作用域插槽拿到row，再去通过vfor遍历row当中销售属性值列表，使用tag去遍历（去官网拿tag）
+
+	展示所有的销售属性除了spu自己有的，剩余的销售属性，在select当中展示（需要计算）
+
+14、收集数据
+	无论是展示数据还是收集数据，都在修改当中完成即可，修改完成了，添加就完成了
+
+	收集前面三个v-model直接收集的，已经可以收集到位了，vmodel本来除了展示还有收集的作用
+
+	收集图片列表
+		无论是添加图片还是删除图片都要收集最新的图片列表，两个回调函数搞定 on-remove和on-success
+		收集的图片并没有收集到位，而是放在外面的spuImageList当中，后期我们需要整理再放到spuForm里面
+		才算到位
+
+		注意：老的图片和新的图片，对象的属性结构是不一样的
+		如果是老的图片
+			id:43
+			imgName:"41550ab1f3f369df.jpg"
+			imgUrl:"http://47.93.148.192:8080/group1/M00/02/DB/rBHu8mGxPcKAA4kQAAAjnj5T1_M968.jpg"
+			name:"41550ab1f3f369df.jpg"
+			spuId:6
+			status:"success"
+			uid:1661581208578
+			url:"http://47.93.148.192:8080/group1/M00/02/DB/rBHu8mGxPcKAA4kQAAAjnj5T1_M968.jpg
+
+		如果是新添加的图片
+			name:"3.jpg"
+			percentage:100
+			raw:File
+			response:Object
+			size:74951
+			status:"success"
+			uid:1661581229399
+			url:"blob:http://localhost:3000/0a1582ad-9c2d-4719-8195-b68138b16a98"
+
+		老的图片当中有name和url也有imgName和imgUrl 而且都是正确的，路径都是网络路径
+		新的图片当中只有name和url，没有imgName和imgUrl，而且url还是错的，它是本地路径
+		因此，这里就告诉我们后面保存的时候，需要把图片列表整理完善之后，再放到spuForm去发请求
+
+	收集添加销售属性 
+		什么就是添加销售属性
+			1》本质就是往spuSaleAttrList内部添加一个销售属性的对象
+			2》添加销售属性的对象结构是什么？
+				{
+				  baseSaleAttrId?: number,
+				  saleAttrName: string,
+				  spuSaleAttrValueList:[] //应该是空数组
+				}
+				id?: number, //不需要的，添加销售属性，是没id的
+				spuId?: number, //不需要的，添加spu的时候，是没有spuId的
+			3》如何获取销售属性对象
+				收集数据形成这个对象
+
+
+
+		收集添加销售属性的过程
+			1、用户点击select选择
+				用户选择一个未使用的销售属性，此时我们就要收集这个销售属性的id和name到saleAttrIdName，id对应的就是对象结构当中的baseSaleAttrId，name对应的就是对象解构当中的saleAttrName，对象结构当中的spuSaleAttrValueList是空数组，因为新添加销售属性还没有添加销售属性值呢
+
+			2、用户点击按钮
+				当用户点击按钮的时候，对应的是一个回调函数，我们在回调函数当中，需要把刚刚收集的
+				id和name，拿到构造成需要的销售属性对象结构，添加到指定的位置spuSaleAttrList
+
+
+
+
+	收集添加销售属性值
+		什么是添加销售属性值
+			1》本质就是往row.spuSaleAttrValueList当中添加一个销售属性值对象
+
+			2》添加销售属性的对象结构是什么？
+				{
+				  baseSaleAttrId?: number,  //需要 代表属性值所属属性的id，给哪个属性加属性值
+				  saleAttrValueName:string, //需要 代表属性值的名称
+				}
+				id?: number, //不需要，因为新添加的销售属性值对象没有id
+			    isChecked: string,//不需要，因为这个数据后台不需要
+			    saleAttrName: string,//不需要，因为有了销售属性的id，就知道给哪个销售属性添加属性值
+			    spuId?: number//不需要 新添加spu的时候没有id
+
+
+			3》如何获取销售属性对象
+				收集数据形成这个对象
+
+		收集添加销售属性值的过程
+			1、首先销售属性值里面input和添加按钮，同时只能显示一个，我们是vif进行判断row.isEdit
+				为什么把isEdit挂在row身上，是因为在这里和平台属性不一样，平台属性当中是每个属性值
+				都有自己的编辑模式和查看模式，是可以修改属性值的
+				在这里，每个属性值是没有自己的编辑模式和查看模式，因为不需要修改属性值，如果要修改
+				就删除后重新添加。所以，每个销售属性只有一个input和按钮，因此最终我们把模式数据添加
+				到row身上（当前的销售属性身上）
+
+			2、用户点击添加按钮，让按钮切换为input（修改row.isEdit），并且自动获取焦点
+
+			3、变为input之后，用户输入数据，我们把用户输入的数据收集起来，暂存在row.saleAttrValueName身上
+
+			4、用户就要失去焦点或者回车，此时我们就可以在回调当中把刚才暂存的row.saleAttrValueName数据拿到，判断成功之后
+			整理成需要的属性值对象格式，添加到指定的位置row.spuSaleAttrValueList当中，同时把原本的输入框当中数据清空
+			变为添加按钮
+
+
+
+
+15、删除spu的销售属性值和删除spu的销售属性
+
+	注意下标
+
+16、	保存操作
+	整理数据
+		 1>整理category3Id，修改里面是有的，但是添加里面需要收集，因此不管是修改还是添加都给一个
+ 			需要从store当中去拿
+  		 2>整理图片列表
+  			新老图片格式上面有
+  		 3>整理spu的销售属性列表
+  		  删除每个销售属性身上的 isEdit和saleAttrValueName
+  
+
+
+
+
+

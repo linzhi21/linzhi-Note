@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table {
+            width: 1000px;
+            table-layout: fixed;
+            border-collapse: collapse;
+        }
+        td {
+            padding: 10px;
+            border: 1px solid #999;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        for (var i = 0; i < 5; i ++) {
+            for (var n = 0; n < 10; n ++) {
+                console.log('高小乐，你妈让你穿秋裤！');
+            }
+        }
+
+        // 输出 8行 6列 的表格
+        document.write('<table>');
+            
+        document.write('<tbody>');
+        
+        // 循环 8 次，输出 8 个 tr
+        for (var i = 0; i < 8; i ++) {
+            document.write('<tr>');
+            
+            // 循环 6 次，输出 6 个 td
+            for (var j = 0; j < 6; j ++) {
+                document.write('<td>' + j + '</td>');
+            }
+
+            document.write('</tr>');
+        }
+
+        document.write('</tbody>');
+        document.write('</table>');
+    </script>
+</body>
+</html>

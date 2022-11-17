@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>轮播图</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        ul {
+            list-style: none;
+        }
+        img {
+            display: block;
+        }
+
+        .play-box {
+            position: relative;
+            margin: 100px auto;
+            width: 900px;
+            height: 350px;
+        }
+        .images li {
+            display: none;
+        }
+        .images li.active {
+            display: block;
+        }
+        .controls {
+            position: absolute;
+            right: 10px;
+            bottom: 10px;
+            display: flex;
+        }
+        .control-item {
+            margin-left: 10px;
+            width: 20px;
+            height: 20px;
+            color: #fff;
+            text-align: center;
+            line-height: 20px;
+            background: #000;
+            border: 1px solid #fff;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+        .control-item.active {
+            color: #f90;
+            border-color: #f90;
+        }
+        .arrow {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            margin-top: auto;
+            margin-bottom: auto;
+            width: 40px;
+            height: 100px;
+            background-image: url(images/index.png);
+            cursor: pointer;
+        }
+        .arrow-prev {
+            left: 0;
+            background-position: 0 0;
+        }
+        .arrow-next {
+            right: 0;
+            background-position: -50px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="play-box" id="playBox">
+        <!-- 图片列表 -->
+        <ul class="images">
+            <li class="active">
+               <img src="images/01.jpg" alt="轮播图">
+            </li>
+            <li>
+                <img src="images/02.jpg" alt="轮播图">
+            </li>
+            <li>
+                <img src="images/03.jpg" alt="轮播图">
+            </li>
+            <li>
+                <img src="images/04.jpg" alt="轮播图">
+            </li>
+            <li>
+                <img src="images/05.jpg" alt="轮播图">
+            </li>
+        </ul>
+        <!-- 控制按钮列表 -->
+        <div class="controls">
+            <span class="control-item active">1</span>
+            <span class="control-item">2</span>
+            <span class="control-item">3</span>
+            <span class="control-item">4</span>
+            <span class="control-item">5</span>
+        </div>
+        <!-- 左右方向按钮 -->
+        <span class="arrow arrow-prev" id="prevBtn"></span>
+        <span class="arrow arrow-next" id="nextBtn"></span>
+    </div>
+
+    <script>
+        (function() {
+            // 获取元素
+            var playBox = document.querySelector('#playBox');
+            var imageItems = document.querySelectorAll('.images li');  // 所有图片项目的集合
+            var controlItems = document.querySelectorAll('.control-item');  // 所有控制按钮的集合
+            var prevBtn = document.querySelector('#prevBtn');       // 上一个按钮
+            var nextBtn = document.querySelector('#nextBtn');       // 下一个按钮
+
+            // 定义变量 记录当前显示的图片的索引
+            var currentIndex = 0;
+            // 计算当前图片索引的最大值
+            var maxIndex = controlItems.length - 1;
+            // 定义自动播放的时间间隔
+            var duration = 3000;
+            // 开启定时器 自动播放 记录定时器标记
+            var intervalId = setInterval(next, duration);
+
+            // 给每一个控制按钮 监听 单击事件
+            controlItems.forEach(function(controlItem, index) {
+                // 添加事件监听
+                controlItem.onclick = function() {
+                   // 修改当前的索引
+                   currentIndex = index;
+                   // 调用函数 setActive
+                   setActive();
+                };
+            });     
+            
+            // 点击下一个按钮
+            nextBtn.onclick = next;
+
+            // 点击上一个按钮
+            prevBtn.onclick = prev;
+
+            // 鼠标进入playBox
+            playBox.onmouseenter = function() {
+                // 停止定时器
+                clearInterval(intervalId);
+            };
+
+            // 鼠标离开 playBox
+            playBox.onmouseleave = function() {
+                // 重新开启定时器
+                intervalId = setInterval(next, duration);
+            };
+
+            
+
+            // 定义函数显示下一张图片 下一个控制按钮
+            function next() {
+                // 当前索引递加
+                currentIndex ++;
+                // 判断是否超出最大值
+                if (currentIndex > maxIndex) {
+                    currentIndex = 0;
+                }
+                // 调用函数 setActive
+                setActive();
+            }
+
+            // 定义函数显示上一张图片 上一个控制按钮
+            function prev() {
+                // 当前索引递减
+                currentIndex --;
+                // 判断是否小于最小值
+                if (currentIndex < 0) {
+                    currentIndex = maxIndex;
+                }
+                // 调用函数setActive
+                setActive();
+            }
+
+            // 定义函数实现当前的图片和控制按钮添加active类名，其他的图片和控制按钮去掉active类名
+            function setActive() {
+                // 排他
+                // 所有的控制按钮去掉active类名  所有的图片项目去掉active类名
+                controlItems.forEach(function(item, i) {
+                    item.classList.remove('active');
+                    imageItems[i].classList.remove('active');
+                });
+                // 当前点击的控制按钮添加active类名
+                controlItems[currentIndex].classList.add('active');
+                // 当前点击的控制按钮对应的图片，添加 active 类
+                imageItems[currentIndex].classList.add('active');
+            }
+            
+        })();
+    </script>
+</body>
+</html>

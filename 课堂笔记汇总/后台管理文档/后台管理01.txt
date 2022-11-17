@@ -1,0 +1,123 @@
+
+1、后台管理项目不是做后端的项目
+	后台管理可以理解为就是前端人员通过可视化的界面操作去对后端数据库进行操作
+
+
+2、打开项目模板安装依赖，创建git仓库
+
+
+3、项目文件和目录介绍
+	|-node_modules 依赖包
+	|-public  包含会被自动打包到项目根路径的文件夹
+		|-favicon.ico  页面标题图标
+		|-static/logo.png 应用Logo图片
+	|-src
+		|-assets  组件中需要使用的公用资源
+			|-404_images  404页面的图片
+			|-bg.jpg	    登陆背景图片
+		|-components  公共非路由组件
+			|-Breadcrumb 面包屑组件(头部水平方向的层级组件)
+			|-Hamburger  用来点击切换左侧菜单导航的图标组件
+			|-SvgIcon    svg图标组件
+		|-hooks	自定义hook模块
+			|-useResize.ts  处理应用在不同屏幕下的适应问题
+		|-layout 管理界面整体布局(一级路由)
+			|-components  组成整体布局的一些子组件
+			|-index.vue  后台管理的整体界面布局组件
+		|-router
+			|-index.ts  路由器
+			|-routes.ts	路由表
+		|-stores
+			|-interface/index.ts state数据接口
+			|-app.js  管理应用相关数据
+			|-settings.js  管理设置相关数据
+			|-userInfo.js  管理后台登陆用户相关数据
+			|-index.js  pinia的store
+		|-styles
+			|-xxx.scss  项目组件需要使用的一些样式(使用scss)
+		|-utils  一些工具函数
+			|-get-page-title.js  得到要显示的网页title
+			|-token-utils.js  操作登陆用户的token cookie
+			|-request.js axios 二次封装的模块
+			|-validate.js  检验相关工具函数
+		|-views  路由组件文件夹
+			|-error/404.vue 404页面 
+			|-home  首页
+			|-login  登陆
+		|-App.vue  应用根组件
+		|-main.ts  入口js
+		|-permission.ts  使用全局守卫实现路由权限控制的模块
+		|-settings.ts  包含应用设置信息的模块
+	|-.env 通用的环境配置
+	|-.env.development  指定了开发环境的代理服务器前缀路径
+	|-.env.production  指定了生产环境的代理服务器前缀路径
+	|-.eslintrc.cjs  eslint的检查配置
+	|-.gitignore  git的忽略配置
+	|-env.d.ts  让TS认知Vue的配置
+	|-index.html 唯一的页面
+	|-package-lock.json  当前项目依赖的第三方包的精确信息
+	|-package.json  当前项目包信息
+	|-README.md	git仓库的md文档
+	|-shims.d.ts	告诉TS, vue 文件是这种类型
+	|-tsconfig.config.json  TS的配置文件
+	|-tsconfig.json	TS的配置文件
+	|-vite.config.ts  vite相关配置(如: 代理服务器等)
+
+
+4、项目接口文档地址
+- 权限管理: http://39.98.123.211:8170/swagger-ui.html
+- 商品管理：http://39.98.123.211:8510/swagger-ui.html
+
+
+5、实现自动登录功能
+	本来的登录是可以运行的，只是使用的是静态数据
+	现在我们要把登录和退出功能重新实现成动态数据
+	和之前的思路一样，全当没有登录，自己实现，先静后动
+
+
+6、登录的静态组件
+	静态组件已经做好了，
+		需要要把滚动条取消掉
+		再把login页面背景图片换成自己的
+
+
+7、做动态前要知道 登录、获取用户信息及退出登录的当前状态都是模拟的
+
+	1、收集登录用户信息数据已经写好
+	2、点击登录登录逻辑也完成了，只是没有发请求，用的是假数据
+	3、登录拿到token后，根据token获取用户信息（token校验）也写好了，也是假数据
+	4、退出登录也写好了，不过也是没有发请求，直接模拟的
+
+
+8、把登录、获取用户信息、退出登录全部改为真实接口动态数据
+
+	发请求：需要axios二次封装，已经封装好了，但是要认识到返回的就是数据本身，后期不需要判断状态码
+
+	书写api，需要自己书写，书写的时候需要定义参数类型和返回的数据类型（postman测试获取数据去写数据类型）
+
+	测试接口请求函数，配置代理
+
+
+	此项目使用pinia管理数据，因此需要把pinia的actions函数全部修改成真实接口
+
+
+	注意：数据格式和以前的数据格式有区别，以前是直接把用户信息name和avatar放在state，
+		现在我们直接获取的是userInfo对象
+		1、修改permission当中的userInfoStore.name 为 userInfostore.userInfo.name
+		2、修改home组件当中的userInfoStore.name 为 userInfostore.userInfo.name
+		3、修改layout当中navBar当中右侧的用户名userInfoStore.name和头像 userInfoStore.avatar
+		4、点击退出登录之前只是清空前台的用户信息，现在我们需要发请求
+
+	修改完成后需要把token添加在请求头当中，尝试登录看看是否有问题
+
+
+	登录可以登录了，但是首页上的名字和退出登录的名字和头像都是错的，需要改成自己的数据
+
+
+	限定用户信息的store当中的stata数据类型，以用来把用户信息userInfo类型限定好，防止飘红
+
+
+9、搭建商品管理的路由菜单
+	菜单的显式最终是由配置的路由而来的
+	需要显示什么菜单那么就需要配置什么路由，要配置路由当然也得有对应的路由组件了
+	搭建自己的商品管理路由组件及配置响应的路由（根据配置好的首页路由来配置，照猫画虎，看注释配meta）

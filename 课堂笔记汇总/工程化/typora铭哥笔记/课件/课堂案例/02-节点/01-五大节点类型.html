@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box {
+            width: 400px;
+            padding: 20px;
+            border: 2px solid #ccc;
+        }
+    </style>
+</head>
+<body>
+    <div id="box" class="current">
+        见君承哥力为承年马。
+        <!-- 我是注释 高小乐你好坏 -->
+    </div>
+    <hr>
+    <div id="item"></div>
+    <script>
+        // 第一种类型 document
+        console.log(document);
+        console.log('nodeName:', document.nodeName);
+        console.log('nodeValue:', document.nodeValue);
+        console.log('nodeType:', document.nodeType);    // 9
+        console.log('');
+
+
+        // 第二种类型 element 元素（最常用的节点类型）
+        var boxNode = document.getElementById('box');
+        console.log(boxNode);
+        console.log('nodeName:', boxNode.nodeName);
+        console.log('nodeValue:', boxNode.nodeValue);
+        console.log('nodeType:', boxNode.nodeType);     // 1
+        console.log('');
+
+
+        // 第三种类型  attribute 属性节点
+        var idAttr = boxNode.getAttributeNode('id');
+        console.log(idAttr);
+        console.log('nodeName:', idAttr.nodeName);
+        console.log('nodeValue:', idAttr.nodeValue);
+        console.log('nodeType:', idAttr.nodeType);     // 2
+        console.log('');
+
+
+        // 第四种类型 文本节点
+        var textNode = boxNode.firstChild;
+        console.log(textNode);
+        console.log('nodeName:', textNode.nodeName);
+        console.log('nodeValue:', textNode.nodeValue);
+        console.log('nodeType:', textNode.nodeType);      // 3
+        console.log('');
+
+
+        // 第五种类型 注释节点
+        var commetNode = boxNode.childNodes[1]
+        console.log(commetNode);
+        console.log('nodeName：', commetNode.nodeName);
+        console.log('nodeValue：', commetNode.nodeValue);
+        console.log('nodeType：', commetNode.nodeType);    // 8
+
+
+
+
+    </script>
+</body>
+</html>

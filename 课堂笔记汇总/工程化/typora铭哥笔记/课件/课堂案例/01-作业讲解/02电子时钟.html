@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #watch {
+            margin-top: 200px;
+            text-align: center;
+            font-size: 60px;
+        }
+    </style>
+</head>
+<body>
+    <div id="watch"></div>
+
+
+    <script>
+        // 获取 id 是watch 的元素
+        var watch = document.getElementById('watch');
+
+        // 调用函数获取时间
+        runTime();
+
+        // 开启定时器
+        setInterval(runTime, 1000);
+
+        // 定义定时器的函数
+        function runTime() {
+            // 创建日期时间对象
+            var date = new Date();
+            // 从日期时间对象中获取时分秒
+            var h = date.getHours();
+            var i = date.getMinutes();
+            var s = date.getSeconds();
+            // 如果是个位数前面补0
+            h = h < 10 ? '0' + h : h;
+            i = i < 10 ? '0' + i : i;
+            s = s < 10 ? '0' + s : s;
+            // 拼接字符串
+            watch.innerHTML = h + ':' + i + ':' + s;
+        }
+    </script>
+</body>
+</html>

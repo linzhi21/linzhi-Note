@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+              *
+             ***
+            *****
+           *******
+          *********
+          n 从 1 开始
+          每行*: 2n-1
+          每行空格： 行数-n
+
+        */
+        // 定义行数
+        var rows = 15;
+
+        // 循环 循环行
+        for (var n = 1; n <= rows; n ++) {
+            // 定义变量
+            var str = '';
+
+            // 输出空格  行数-n
+            for (var i = 1; i <= rows - n; i ++) {
+                str += ' ';
+            }
+
+            // 输出*    2*n - 1
+            for (var i = 1; i <= 2*n - 1; i ++) {
+                str += '*';
+            }
+
+            // 输出字符串
+            console.log(str);
+        }
+    </script>
+</body>
+</html>

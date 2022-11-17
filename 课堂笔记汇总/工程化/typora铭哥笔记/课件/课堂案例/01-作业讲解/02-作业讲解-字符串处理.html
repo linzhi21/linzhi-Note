@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 定义字符串  getElementById
+        //var msg = 'get-element-by-id';
+        var msg = 'set-element-by-class-name';
+
+        // 第一步 将字符串分割为数组，以-为分隔符
+        // var arr = msg.split('-');
+        // console.log(arr);
+
+        // // 第二步 处理数组
+        // var newArr = arr.map(function(item,index) {
+        //     if (index === 0) {
+        //         return item;
+        //     }
+        //     return item[0].toUpperCase() + item.slice(1);
+        // });
+        // console.log(newArr);
+
+        // // 第三步 将数组合并为字符串
+        // var newStr = newArr.join('');
+        // console.log(newStr);
+        
+
+        var str = msg.split('-').map(function(item,index) {
+            if (index === 0) {
+                return item;
+            }
+            return item[0].toUpperCase() + item.slice(1);
+        }).join('');
+        console.log(str);
+
+    </script>
+</body>
+</html>

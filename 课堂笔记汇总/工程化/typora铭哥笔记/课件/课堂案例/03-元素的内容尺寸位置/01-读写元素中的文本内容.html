@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 600px;
+            padding: 20px;
+            border: 2px solid #999;
+        }
+    </style>
+</head>
+<body>
+    <button id="btn1">设置innerHTML</button>
+    <button id="btn2">设置outerHTML</button>
+    <button id="btn3">设置innerText</button>
+    <button id="btn4">设置textContent</button>
+    <br>
+    <br>
+    <div class="box">
+        孔勉而而才竟也，将变也，才百不叩，倒全。
+        <h2>将同兼，为能爻，动。</h2>
+        <hr>
+        <ul>
+            <li>罚吞是来有帅我疾仍召洪会不战。</li>
+            <li>罚吞是来有帅我疾仍召洪会不战。</li>
+            <li>罚吞是来有帅我疾仍召洪会不战。</li>
+            <li>罚吞是来有帅我疾仍召洪会不战。</li>
+            <li>罚吞是来有帅我疾仍召洪会不战。</li>
+        </ul>
+    </div>
+
+    <script>
+        // 获取box元素
+        var box = document.querySelector('.box');
+
+        // 获取按钮
+        var btn1 = document.querySelector('#btn1');
+        var btn2 = document.querySelector('#btn2');
+        var btn3 = document.querySelector('#btn3');
+        var btn4 = document.querySelector('#btn4');
+
+        // 点击设置innerHTML
+        btn1.onclick = function() {
+            box.innerHTML = '<h1>高小乐           <em>低大悲</em></h1>';
+        }
+
+        // 点击设置outerHTML
+        btn2.onclick = function() {
+            box.outerHTML = '<h1>高小乐           <em>低大悲</em></h1>';
+        }
+
+        // 点击设置 innerText
+        btn3.onclick = function() {
+            box.innerText = '<h1>高小乐           <em>低大悲</em></h1>';
+        };
+
+        // 点击设置 textContent
+        btn4.onclick = function() {
+            box.textContent = '<h1>高小乐           <em>低大悲</em></h1>';
+        }
+
+
+
+        // 读取box的文本内容
+        console.log('innerHTML:');
+        console.log(box.innerHTML);
+        console.log('');
+        console.log('');
+
+
+        console.log('outerHTML:');
+        console.log(box.outerHTML);
+        console.log('');
+        console.log('');
+
+
+        console.log('innerText:');
+        console.log(box.innerText);
+        console.log('');
+        console.log('');
+
+
+        console.log('textContent:');
+        console.log(box.textContent);
+        console.log('');
+        console.log('');
+
+
+    </script>
+</body>
+</html>

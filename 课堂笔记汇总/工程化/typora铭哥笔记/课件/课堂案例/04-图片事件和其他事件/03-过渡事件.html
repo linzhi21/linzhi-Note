@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .avator {
+            width: 100px;
+            height: 100px;
+            border: 6px solid #099;
+            border-radius: 50%;
+            transition: 1s 2s;
+        }
+        .avator:hover {
+            transform: rotate(720deg);
+        }
+    </style>
+</head>
+<body>
+    <img src="images/db01.jpg" alt="avator" class="avator">
+
+    <script>
+        // 获取图片元素
+        var imgNode = document.querySelector('.avator');
+
+        // 监听过渡事件
+        imgNode.ontransitionstart = function() {
+            console.log('transitionstart');
+        };
+
+        imgNode.ontransitionend = function() {
+            console.log('transitionend');
+        };
+
+        imgNode.ontransitionrun = function() {
+            console.log('transitionrun');
+        }
+    </script>
+</body>
+</html>

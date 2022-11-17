@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 定义数组
+        var nums = [12,566,34,67,46, 102,678, 100, 89];
+   
+        // 1. 计算数组中所有元素的和 -----------------------------
+        // 定义变量记录和
+        var sum = 0;  
+        // 遍历数组
+        for (var i = 0; i < nums.length; i ++) {
+            sum += nums[i];
+        }
+        console.log('数组中所有元素的和：', sum);
+        console.log('');
+
+        // 2. 计算数组中所有元素的平均值  ------------------------
+        console.log('数组中所有元素的平均值：', sum / nums.length);
+        console.log('');
+
+
+        // 3. 取出数组中值最大的元素 --------------------------------
+        // 定义变量 存储值最大的元素
+        var max = nums[0];
+        // 循环遍历数组
+        for (var i = 1; i < nums.length; i ++) {
+            // 如果当前的元素比max大，修改max的值为当前元素
+            if (nums[i] > max) {
+                max = nums[i];
+            }
+        }
+        console.log('数组中值最大的元素：', max);
+        console.log('');
+
+
+        // 4. 取出数组中值最小的元素 --------------------------------
+        // 定义遍历，记录值最小的元素
+        var min = nums[0];
+        // 遍历数组
+        for (var i = 1; i < nums.length; i ++) {
+            // 如果当前元素的值比min小，修改min的值为当前元素
+            if (nums[i] < min) {
+                min = nums[i];
+            }
+        }
+        console.log('数组中值最小的元素：', min);
+
+
+   </script>
+</body>
+</html>

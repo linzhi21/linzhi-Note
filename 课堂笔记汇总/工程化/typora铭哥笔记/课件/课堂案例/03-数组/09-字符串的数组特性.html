@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 定义字符串
+        var msg = 'Hello World 高小乐 穿秋裤';
+
+        // 获取字符串中字符的个数
+        console.log('字符串长度（字符个数）：', msg.length);
+
+        // 字符串中的字符也有索引，从0开始，连续的数字
+        console.log(msg[0]);
+        console.log(msg[10]);
+        console.log(msg[14]);
+        console.log('');
+
+
+        // 遍历字符串
+        for (var i = 0; i < msg.length; i ++) {
+            console.log(msg[i]);
+        }
+        console.log('');
+
+
+        msg.length = 10;
+        console.log(msg);
+
+        msg[0] = 'A';
+        console.log(msg);
+
+    </script>
+</body>
+</html>

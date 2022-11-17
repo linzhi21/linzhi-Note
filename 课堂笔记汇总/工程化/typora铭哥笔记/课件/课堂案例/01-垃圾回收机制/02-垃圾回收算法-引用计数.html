@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 引用计数 1
+        var obj = {name:'高小乐'};
+
+        // 引用计数 2
+        var obj1 = obj;
+
+        // 引用次数 3
+        fn(obj);
+
+        function fn(arg) {
+
+        }
+        console.log('');
+
+        var obj1 = {name:'obj1'};
+        var obj2 = {name:'obj2'};
+
+        obj1.child = obj2;
+        obj2.child = obj1;
+
+        obj1 = null;
+        obj2 = null;
+
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box {
+            width: 600px;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>读写元素的行内样式</h1>
+    <hr>
+    <button id="btn01">读取样式</button>
+    <button id="btn02">设置样式</button>
+    <br>
+    <br>
+    <br>
+    <div id="box" style="border: 3px dashed #099; background-color: #ccc">
+        禀不我有语俭生两，服定自仑过宫是梵得人其极谢家要薪卅诗，鼓程第是，一锐之，关是不，老太没前四德是生我极用后井重卡亡心倒，承王都德，胸韩我量下，非极足临郭的流同人屯心洪后且秦竟为，我没尝是郭甲廿情吴王者训名赠收太锐，彷人天极与则拢胜一者得，到之关办太，同俭。
+    </div>
+
+    <script>
+        // 获取元素
+        var box = document.querySelector('#box');
+        var btn01 = document.querySelector('#btn01');
+        var btn02 = document.querySelector('#btn02');
+
+        // 点击按钮 获取到指定的样式
+        btn01.onclick = function() {
+            console.log(box.style.border);
+            console.log(box.style['background-color']);
+            console.log(box.style.backgroundColor);
+            console.log('width样式：', box.style.width);
+        }
+
+
+        // 点击按钮 设置样式
+        btn02.onclick = function() {
+            box.style.border = '5px solid #f00';
+            box.style.backgroundColor = '#099';
+            box.style.width = '500px';
+            box.style.color = '#fff';
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            margin: 30px 0;
+            width: 300px;
+            height: 100px;
+            border-radius: 10px;
+        }
+
+        .box01 {
+            background: #f00;
+        }
+        .box02 {
+            background: #080;
+        }
+        .box03 {
+            background: #099;
+        }
+    </style>
+</head>
+<body>
+    <h1>事件回调函数中 this 的指向</h1>
+    <hr>
+
+    <div class="box box01" onclick="fn01(this)"></div>
+    <div class="box box02"></div>
+    <div class="box box03"></div>
+
+    <script>
+        function fn01(obj) {
+            console.log('box01 被 click 了！');
+            console.log(this);  // window
+            console.log(obj);   // box01
+        }
+
+
+        // 第二种方式 将事件作为元素对象方法
+        // 获取 box02 元素
+        var box02 = document.querySelector('.box02');
+        // 监听事件 将事件作为元素对象的方法
+        box02.onclick = function() {
+            console.log('box02 被 click 了!');
+            console.log(this);
+            this.style.background = '#000';
+        };
+       
+
+        // 第三种方式 使用方法 addEventListener
+        // 获取 box03 元素
+        var box03 = document.querySelector('.box03');
+        // 添加 click 事件
+        box03.addEventListener('click', function() {
+            console.log('box03 被 click 了！');
+            console.log(this);
+            this.style.background = '#000';
+        });
+       
+    </script>
+</body>
+</html>
